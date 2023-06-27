@@ -1,11 +1,11 @@
 import common from './_common'
 
 const spacing = { ...common.spacing }
-const colors = { ...common.colors, text: '#FFF' }
+const colors = { ...common.colors, text: '#FFFFFF' }
 
 const background = {
-    bgPrimary: '#101010',
-    bgSecondary: '#1C1C1C'
+    bgPrimary: '#0B0E13',
+    bgSecondary: '#161D26'
 }
 
 const theme = {

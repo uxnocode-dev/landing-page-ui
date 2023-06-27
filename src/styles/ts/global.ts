@@ -1,4 +1,8 @@
+import 'swiper/css'
+import 'swiper/css/pagination'
+import 'swiper/css/navigation'
 import 'react-toastify/dist/ReactToastify.css'
+import 'react-responsive-carousel/lib/styles/carousel.min.css'
 
 import { createGlobalStyle } from 'styled-components'
 import tw from 'twin.macro'
@@ -19,9 +23,8 @@ export default createGlobalStyle`
     ${tw`text-base`}
     background: ${props => props.theme.colors.bgPrimary};
     color: ${props => props.theme.colors.text};
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 400;
-
   }
 
   html {

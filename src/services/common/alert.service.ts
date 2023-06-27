@@ -37,4 +37,8 @@ export class AlertService {
             ...config
         })
     }
+
+    responseError(error: any, config?: AlertConfigType) {
+        this.error(error['message'], config)
+    }
 }

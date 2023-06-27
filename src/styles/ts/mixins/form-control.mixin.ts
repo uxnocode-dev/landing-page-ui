@@ -8,6 +8,10 @@ export const formControlFocus = () => css`
         > i,
         > svg {
             color: ${({ theme }) => theme.colors.primary};
+
+            &:after {
+                border-color: ${({ theme }) => theme.colors.primary};
+            }
         }
     }
 `
@@ -20,10 +24,10 @@ export const formControlFill = () => css`
             input:-webkit-autofill:focus,
             input:-webkit-autofill:active
         ) {
-        box-shadow: ${`0 0 0 30px ${light_theme.colors.bgSecondary} inset !important`};
+        box-shadow: ${`0 0 0 30px ${light_theme.colors.gray_light} inset !important`};
 
         > input {
-            box-shadow: ${`0 0 0 30px ${light_theme.colors.bgSecondary} inset !important`};
+            box-shadow: ${`0 0 0 30px ${light_theme.colors.gray_light} inset !important`};
         }
     }
 `

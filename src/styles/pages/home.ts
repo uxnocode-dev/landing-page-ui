@@ -27,10 +27,15 @@ const Button = styled(AppButton).attrs(fadeIn.up)`
     }
 `
 
+const Section = styled.section`
+    ${tw`flex gap-6`}
+`
+
 export default {
     Container,
     Title,
     Image,
+    Button,
     Content,
-    Button
+    Section
 }

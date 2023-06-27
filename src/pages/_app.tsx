@@ -12,6 +12,7 @@ import AppToast from '@/components/common/app-toast'
 import AppLoading from '@/components/common/app-loading'
 import { PersistGate } from 'redux-persist/integration/react'
 import { UiStateInterface } from '@/store/@interfaces/uiState.interface'
+import '@/styles/css/global.css'
 
 const persistor = persistStore(store)
 
