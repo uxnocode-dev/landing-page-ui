@@ -41,11 +41,9 @@ const LPFaq: React.FC = () => {
         }
     ]
 
-    const useAccordionRef = () => useAppAccordionRef()
-
     const questionsResult: IFaqQuestionItem[] = questions.map(question => ({
         question,
-        ref: useAccordionRef()
+        ref: useAppAccordionRef() // eslint-disable-line react-hooks/rules-of-hooks
     }))
 
     const onAcordionOpen = (index: number) => {
