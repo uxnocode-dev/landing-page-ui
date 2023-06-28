@@ -1,6 +1,7 @@
 import React from 'react'
 import Styles from './styles'
 import images from '@/assets/images'
+import LPSocialMedia from '../social-media'
 
 const LPFooter: React.FC = () => {
     const columns = [
@@ -62,7 +63,7 @@ const LPFooter: React.FC = () => {
                 <Styles.Container>
                     <Styles.View>
                         <Styles.Image src={images.Logo} />
-                        <Styles.Text>
+                        <Styles.Text className="sm:text-center">
                             Pessoas incríveis com processos e visão clara,
                             constroem produtos sensacionais!
                         </Styles.Text>
@@ -90,10 +91,12 @@ const LPFooter: React.FC = () => {
             </Styles.Section>
 
             <Styles.Footer>
-                <Styles.Text className="mr-auto">
+                <Styles.Text className="mr-auto sm:text-center sm:text-sm">
                     ® 2023 uxnocode.com | CNPJ: 46.182.874/0001-82 - Todos os
                     direitos reservados.
                 </Styles.Text>
+
+                <LPSocialMedia />
             </Styles.Footer>
         </>
     )

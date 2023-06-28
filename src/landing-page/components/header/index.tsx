@@ -6,6 +6,8 @@ import { scrollTo } from '@/functions/scroll-to.function'
 import useScrollPosition from '@/hooks/scroll-position.hook'
 import { LANDING_PAGE_NAVIGATION } from '@/contants/landing-page.contant'
 import { ILandingPageMenuItem } from '@/components/@interface/landing-page-menu.interface'
+import LPSideMenu from '../side-menu'
+import { FaGripLines } from 'react-icons/fa'
 
 const LPHeader: React.FC = () => {
     const isScrollPastPosition = useScrollPosition(50)
@@ -37,22 +39,35 @@ const LPHeader: React.FC = () => {
     }
 
     return (
-        <Styles.Header style={headerStyle}>
-            <Styles.Container>
-                <Styles.Image src={images.Logo} />
+        <>
+            <Styles.Header style={headerStyle}>
+                <Styles.Container>
+                    <Styles.Image src={images.Logo} />
 
-                <Styles.Group>
-                    {items.map((item, index) => (
-                        <Styles.Link
-                            key={index}
-                            onClick={() => handleClickItem(item)}
-                        >
-                            {item.title}
-                        </Styles.Link>
-                    ))}
-                </Styles.Group>
-            </Styles.Container>
-        </Styles.Header>
+                    <Styles.Group>
+                        {items.map((item, index) => (
+                            <Styles.Link
+                                key={index}
+                                onClick={() => handleClickItem(item)}
+                            >
+                                {item.title}
+                            </Styles.Link>
+                        ))}
+                    </Styles.Group>
+
+                    <Styles.Button onClick={() => toggleSideMenuOpen()}>
+                        <FaGripLines />
+                    </Styles.Button>
+                </Styles.Container>
+            </Styles.Header>
+
+            <LPSideMenu
+                items={items}
+                show={showSideMenu}
+                onClose={() => setShowSideMenu(false)}
+                onSelect={item => handleClickItem(item)}
+            />
+        </>
     )
 }
 

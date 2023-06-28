@@ -8,10 +8,12 @@ const Section = styled.article`
 `
 
 const Container = styled(AppContainer)`
-    ${tw`grid gap-8 grid-cols-[30% 1fr]`}
+    ${tw`grid gap-8 grid-cols-[30% 1fr] sm:gap-12 sm:items-center sm:grid-cols-1!`}
 `
 
-const View = styled.div``
+const View = styled.div`
+    ${tw`sm:flex sm:flex-col sm:items-center`}
+`
 
 const Footer = styled(AppContainer)`
     ${tw`py-8 flex items-center justify-end`}
@@ -38,7 +40,7 @@ const Image = styled.img`
 `
 
 const ItemsContainer = styled.article`
-    ${tw`grid sm:grid-cols-1!`}
+    ${tw`grid sm:grid-cols-1! sm:gap-4`}
 `
 
 const Item = styled.div``

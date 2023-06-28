@@ -28,7 +28,7 @@ const Card = styled.article`
         border: 2px solid ${({ theme }) => theme.colors.primary};
 
         > figure {
-            ${tw`w-16 h-16 rounded-2xl shadow-xl absolute top-[-1rem] left-[-0.6rem] z-[90]`}
+            ${tw`w-16 h-16 rounded-2xl shadow-xl absolute top-[-1rem] left-[-0.6rem] z-[2]`}
             background: ${({ theme }) => theme.colors.bgSecondary};
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
         }

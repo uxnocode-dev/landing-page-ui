@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import { scrollTo } from '@/functions/scroll-to.function'
 import AppButton from '@/components/common/@button/app-button'
 import TypingText from '@/landing-page/components/typing-text'
+import LPSocialMedia from '@/landing-page/components/social-media'
 import { LANDING_PAGE_NAVIGATION } from '@/contants/landing-page.contant'
 
 const LPHero: React.FC = () => {
@@ -61,6 +62,11 @@ const LPHero: React.FC = () => {
             id={LANDING_PAGE_NAVIGATION.top}
         >
             <Styles.Container>
+                <LPSocialMedia
+                    direction="column"
+                    className="absolute right-12 top-10 sm:static sm:mb-8"
+                />
+
                 <TypingText
                     text={currentTitle.text}
                     highlights={currentTitle.highlights}

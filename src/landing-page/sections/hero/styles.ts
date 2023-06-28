@@ -1,6 +1,5 @@
 import { AppContainer } from '@/styles/ts/components'
 import styled from 'styled-components'
-import { css } from 'styled-components'
 import tw from 'twin.macro'
 
 interface IContainerWrapperProps {
@@ -31,7 +30,7 @@ const ContainerWrapper = styled.section<IContainerWrapperProps>`
 `
 
 const Container = styled(AppContainer)`
-    ${tw`flex flex-col items-center pt-24`}
+    ${tw`flex flex-col items-center pt-24 relative sm:pt-10`}
 `
 
 const Title = styled.h1`
