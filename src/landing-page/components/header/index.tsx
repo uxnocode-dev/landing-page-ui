@@ -28,7 +28,7 @@ const LPHeader: React.FC = () => {
 
     const handleClickItem = (item: ILandingPageMenuItem) => {
         if (item.action) item.action()
-        else if (item.id) scrollTo(item.id, 74)
+        else if (item.id) scrollTo(item.id)
 
         if (showSideMenu) toggleSideMenuOpen()
     }

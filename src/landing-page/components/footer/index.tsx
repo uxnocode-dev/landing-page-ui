@@ -2,17 +2,35 @@ import React from 'react'
 import Styles from './styles'
 import images from '@/assets/images'
 import LPSocialMedia from '../social-media'
+import { scrollTo } from '@/functions/scroll-to.function'
+import { LANDING_PAGE_NAVIGATION } from '@/contants/landing-page.contant'
 
 const LPFooter: React.FC = () => {
     const columns = [
         {
             title: `Mapa do site`,
             items: [
-                { title: `Topo do site`, action: () => {} },
-                { title: `Serviços`, action: () => {} },
-                { title: `Diferenciais`, action: () => {} },
-                { title: `Cases`, action: () => {} },
-                { title: `FAQs`, action: () => {} },
+                {
+                    title: `Topo do site`,
+                    action: () => scrollTo(LANDING_PAGE_NAVIGATION.top)
+                },
+                {
+                    title: `Serviços`,
+                    action: () => scrollTo(LANDING_PAGE_NAVIGATION.services)
+                },
+                {
+                    title: `Diferenciais`,
+                    action: () =>
+                        scrollTo(LANDING_PAGE_NAVIGATION.differentials)
+                },
+                {
+                    title: `Cases`,
+                    action: () => scrollTo(LANDING_PAGE_NAVIGATION.cases)
+                },
+                {
+                    title: `FAQs`,
+                    action: () => scrollTo(LANDING_PAGE_NAVIGATION.faq)
+                },
                 { title: `Carreira`, action: () => {} }
             ]
         },
@@ -91,7 +109,7 @@ const LPFooter: React.FC = () => {
             </Styles.Section>
 
             <Styles.Footer>
-                <Styles.Text className="mr-auto sm:text-center sm:text-sm">
+                <Styles.Text className="mr-auto sm:text-center sm:text-sm sm:mb-4">
                     ® 2023 uxnocode.com | CNPJ: 46.182.874/0001-82 - Todos os
                     direitos reservados.
                 </Styles.Text>

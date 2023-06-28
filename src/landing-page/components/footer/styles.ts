@@ -16,7 +16,7 @@ const View = styled.div`
 `
 
 const Footer = styled(AppContainer)`
-    ${tw`py-8 flex items-center justify-end`}
+    ${tw`py-8 flex items-center justify-end sm:flex-col`}
 `
 
 const Text = styled.p`
