@@ -1,9 +1,22 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
-import nodemailer from 'nodemailer'
 import NextCors from 'nextjs-cors'
-import { TRANSPORT_CONFIG } from '@/config/email/transport.config'
+import enviroments from '@/config/enviroments'
+import type { NextApiRequest, NextApiResponse } from 'next'
+import { IEmailSendDTO } from '@/interfaces/email.interface'
+import { EMAIL_LIST } from '@/config/email/email-list.config'
+import { MailerSend, EmailParams, Sender, Recipient } from 'mailersend'
 
 type ResponseData = { message: string; error?: any }
+
+const getService = () => {
+    const apiKey = enviroments.mailersend_api_key
+
+    const params = new EmailParams()
+    const service = new MailerSend({ apiKey })
+
+    return { service, params }
+}
+
+const buildEmailList = (list: string[]) => list.map(i => new Recipient(i))
 
 export default async function handler(
     req: NextApiRequest,
@@ -16,9 +29,23 @@ export default async function handler(
     })
 
     try {
-        console.log('OLA')
-        const transporter = nodemailer.createTransport(TRANSPORT_CONFIG)
-        await transporter.sendMail(req.body)
+        const { service, params } = getService()
+
+        const payload = req.body as IEmailSendDTO
+        const fromEmail = payload.from || EMAIL_LIST.sender.admin
+
+        const from = new Sender(fromEmail)
+        const cc = buildEmailList(payload.cc || [])
+        const recipients = buildEmailList(payload.to)
+
+        params
+            .setCc(cc)
+            .setFrom(from)
+            .setTo(recipients)
+            .setHtml(payload.html)
+            .setSubject(payload.subject)
+
+        await service.email.send(params)
 
         res.status(200).json({ message: 'Email enviado com sucesso' })
     } catch (error) {

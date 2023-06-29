@@ -1,6 +1,8 @@
 import Styles from './styles'
 import { setLoading } from '@/hooks'
 import React, { useState } from 'react'
+import { IEmailSendDTO } from '@/interfaces/email.interface'
+import { EMAIL_LIST } from '@/config/email/email-list.config'
 import { AlertService } from '@/services/common/alert.service'
 import { EmailService } from '@/services/common/email.service'
 import { IContactUserData } from '@/interfaces/contact.interface'
@@ -29,17 +31,16 @@ const LPContact: React.FC = () => {
         setLoading(true, 'Enviando o seu contato...')
 
         try {
-            const emailDTO = {
-                to: 'pedro.silva-dev@hotmail.com',
-                subject: 'Contato',
-                from: userData?.email,
-                replyTo: userData?.email,
+            const emailDTO: IEmailSendDTO = {
+                subject: 'Proposta comercial',
+                to: [EMAIL_LIST.receiver.budget],
                 html: getBudgetTemplate(userData, model)
             }
 
-            const { data } = await emailService.send(emailDTO)
-            console.log('MODEL', model)
-            // setIsSuccess(true)
+            console.log(emailDTO.html)
+
+            const { data } = await emailService.send({})
+            setIsSuccess(true)
             alertService.success(data.message)
         } catch (error) {
             alertService.error('Ocorreu um erro ao enviar o contato')

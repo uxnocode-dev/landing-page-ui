@@ -24,6 +24,7 @@
         "dotenv": "^16.0.3",
         "firebase": "^9.22.2",
         "framer-motion": "^7.2.1",
+        "mailersend": "^2.1.2",
         "next": "^13.4.3",
         "next-compose-plugins": "^2.2.1",
         "next-images": "^1.8.4",

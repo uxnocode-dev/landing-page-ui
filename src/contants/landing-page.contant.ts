@@ -1,5 +1,5 @@
 export const LANDING_PAGE_NAVIGATION = {
-    top: 'top',
+    top: 'hero',
     services: 'services',
     differentials: 'differentials',
     cases: 'cases',
