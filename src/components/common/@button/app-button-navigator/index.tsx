@@ -4,6 +4,8 @@ import AppButton from '../app-button'
 import { FaArrowRight } from 'react-icons/fa'
 import { useAutoAnimate } from '@formkit/auto-animate/react'
 
+type ButtonType = 'button' | 'submit' | 'reset' | undefined
+
 interface IAppButtonNavigatorProps {
     className?: string
     isDisabled?: boolean
@@ -15,6 +17,8 @@ interface IAppButtonNavigatorProps {
     textPrev?: string
     showNext?: boolean
     showPrev?: boolean
+    typeNext?: ButtonType
+    typePrev?: ButtonType
     disabledNext?: boolean
     disabledPrev?: boolean
 }
@@ -27,6 +31,8 @@ const AppButtonNavigator: React.FC<IAppButtonNavigatorProps> = props => {
         showPrev = true,
         showNext = true,
         textPrev = 'Voltar',
+        typePrev = 'button',
+        typeNext = 'button',
         textNext = 'Próximo',
         disabledPrev = false,
         disabledNext = false,
@@ -37,6 +43,7 @@ const AppButtonNavigator: React.FC<IAppButtonNavigatorProps> = props => {
 
     const prevButton = (
         <AppButton
+            type={typePrev}
             showIcon={false}
             colorMode="tertiary"
             onClick={() => onPrev()}
@@ -49,6 +56,7 @@ const AppButtonNavigator: React.FC<IAppButtonNavigatorProps> = props => {
     const nextButton = (
         <AppButton
             icon={icon}
+            type={typeNext}
             onClick={() => onNext()}
             isDisabled={disabledNext}
         >

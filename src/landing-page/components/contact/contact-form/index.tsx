@@ -1,6 +1,5 @@
 import React from 'react'
 import Styles from './styles'
-import LPButton from '../../button'
 import images from '@/assets/images'
 import { FiUser } from 'react-icons/fi'
 import { useForm } from 'react-hook-form'
@@ -9,10 +8,11 @@ import { useMask } from '@/hooks/mask.hook'
 import { HiOutlineMail } from 'react-icons/hi'
 import landingPage from '@/assets/landing-page'
 import { yupResolver } from '@hookform/resolvers/yup'
+import { useWindowSize } from '@/hooks/window-size.hook'
 import AppInput from '@/components/common/@form/app-input'
-import { IContactUserData } from '@/interfaces/contact.interface'
-import { contactUserDataSchema } from '@/schemas/contact.schema'
 import AppButton from '@/components/common/@button/app-button'
+import { contactUserDataSchema } from '@/schemas/contact.schema'
+import { IContactUserData } from '@/interfaces/contact.interface'
 
 interface ILPContactFormProps {
     onSubmit: (model: IContactUserData) => void
@@ -20,6 +20,11 @@ interface ILPContactFormProps {
 
 const LPContactForm: React.FC<ILPContactFormProps> = props => {
     const { onSubmit } = props
+    const { isMobile } = useWindowSize()
+
+    const avatarIMG = !isMobile
+        ? landingPage.AvatarContact
+        : landingPage.AvatarContactMobile
 
     const phoneNumberMask = useMask('phoneNumber')
 
@@ -38,7 +43,7 @@ const LPContactForm: React.FC<ILPContactFormProps> = props => {
 
     return (
         <Styles.Container>
-            <Styles.Image src={landingPage.AvatarContact} />
+            <Styles.Image src={avatarIMG} />
 
             <Styles.Form onSubmit={_onSubmit}>
                 <Styles.ImageLogo src={images.Logo} />

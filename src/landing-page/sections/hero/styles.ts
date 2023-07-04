@@ -1,4 +1,5 @@
 import { AppContainer } from '@/styles/ts/components'
+import { rgba } from 'polished'
 import styled from 'styled-components'
 import tw from 'twin.macro'
 
@@ -14,7 +15,17 @@ const ContainerWrapper = styled.section<IContainerWrapperProps>`
 
     animation: zoom 8s infinite;
 
+    box-shadow: inset -700px -700px 300px 700px
+        ${({ theme }) => rgba(theme.colors.bgPrimary, 0.2)};
+
     ${tw`sm:bg-cover!`}
+
+    @media (min-width: 640px) {
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
 
     @keyframes zoom {
         0% {
@@ -30,7 +41,7 @@ const ContainerWrapper = styled.section<IContainerWrapperProps>`
 `
 
 const Container = styled(AppContainer)`
-    ${tw`flex flex-col items-center pt-24 relative sm:pt-10`}
+    ${tw`flex flex-col items-center pt-14 relative sm:pt-10`}
 `
 
 const Title = styled.h1`
@@ -39,7 +50,7 @@ const Title = styled.h1`
 
 const Text = styled.p`
     white-space: pre;
-    ${tw`text-center w-[78%] mb-8 sm:w-full md:whitespace-normal`}
+    ${tw`text-center w-[78%] mb-4 sm:w-full md:whitespace-normal`}
 `
 
 const ColoredText = styled.span`

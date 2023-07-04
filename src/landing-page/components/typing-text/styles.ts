@@ -1,10 +1,16 @@
 import styled from 'styled-components'
 import tw from 'twin.macro'
 
-const Container = styled.article``
+const Container = styled.article`
+    br {
+        ${tw`sm:hidden`}
+    }
 
-const Text = styled.p``
+    span {
+        ${tw`sm:mb-0`}
+    }
+`
 
 const Line = styled.br``
 
-export default { Container, Text, Line }
+export default { Container, Line }

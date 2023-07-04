@@ -1,7 +1,8 @@
 import { emailClient } from '@/config/http'
+import { IEmailSendDTO } from '@/interfaces/email.interface'
 
 export class EmailService {
-    send(formData: any) {
-        return emailClient.post('/email/send', formData)
+    send(data: IEmailSendDTO) {
+        return emailClient.post('/email/send', data)
     }
 }

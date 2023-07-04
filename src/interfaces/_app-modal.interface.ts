@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import React from 'react'
 
 export interface AppModalInterface {
     width?: number | string
@@ -8,10 +8,11 @@ export interface AppModalInterface {
     isOpen: boolean
     header?: JSX.Element
     footer?: JSX.Element
+    onClose?: Function
     onClickClose?: Function
     onBackdropClick?: Function
-    onClose?: Function
-    children?: ReactNode
-    containerStyle?: any
+    children?: React.ReactNode
+    containerStyle?: React.CSSProperties
+    backdropStyle?: React.CSSProperties
     color?: string
 }

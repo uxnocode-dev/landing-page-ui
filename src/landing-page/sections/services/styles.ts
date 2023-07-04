@@ -40,7 +40,7 @@ const Title = styled.h3`
 `
 
 const Icon = styled.figure`
-    ${tw`w-12 h-12 mb-4 rounded-full flex items-center justify-center z-[2]`}
+    ${tw`w-12 h-12 mb-4 rounded-full flex items-center justify-center z-[0]`}
     ${({ theme }) => neon(theme.colors.primary)}
 
     > svg {

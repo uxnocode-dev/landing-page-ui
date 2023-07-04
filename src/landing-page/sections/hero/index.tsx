@@ -11,7 +11,7 @@ const LPHero: React.FC = () => {
     const titles = [
         {
             highlights: ['jornada', 'ajudar nessa escalada!'],
-            text: `A construção de um software é uma jornada,e \nnós estamos aqui para ajudar nessa escalada!`
+            text: `A construção de um software é uma jornada, e \nnós estamos aqui para ajudar nessa escalada!`
         },
         {
             highlights: ['tempo', 'dinheiro'],
@@ -64,13 +64,13 @@ const LPHero: React.FC = () => {
             <Styles.Container>
                 <LPSocialMedia
                     direction="column"
-                    className="absolute right-12 top-10 sm:static sm:mb-8"
+                    className="pr-4 absolute right-12 top-10 sm:static sm:mb-8"
                 />
 
                 <TypingText
                     text={currentTitle.text}
                     highlights={currentTitle.highlights}
-                    className="min-h-[134px] font-bold text-center text-[2.75rem] mb-8 sm:text-lg"
+                    className="min-h-[134px] font-bold text-center text-[2.75rem] mb-8 sm:text-[1.2rem] sm:block"
                 />
 
                 <Styles.Text>

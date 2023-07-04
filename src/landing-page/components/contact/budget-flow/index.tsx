@@ -8,6 +8,8 @@ import LPBudgetSection, {
     IBudgetSectionAnswer
 } from '../../budget/budget-section'
 import { useWindowSize } from '@/hooks/window-size.hook'
+import { scrollTo } from '@/functions/scroll-to.function'
+import { LANDING_PAGE_NAVIGATION } from '@/contants/landing-page.contant'
 
 const animation = {
     hide: { opacity: 0 },
@@ -53,7 +55,10 @@ const LPBudgetFlow: React.FC<ILPBudgetFlowProps> = ({ onSubmit }) => {
 
     const handleNext = () => {
         if (isLastStep) handleSubmit()
-        else animate(() => setCurrentSectionIndex(prev => prev + 1))
+        else {
+            scrollTo(LANDING_PAGE_NAVIGATION.contact, 0)
+            animate(() => setCurrentSectionIndex(prev => prev + 1))
+        }
     }
 
     const handleAnswerChange = (model: IBudgetSectionAnswer) => {

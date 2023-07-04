@@ -2,13 +2,13 @@ import styled from 'styled-components'
 import tw from 'twin.macro'
 
 const Container = styled.section`
-    ${tw`grid grid-cols-2 items-stretch`}
+    ${tw`grid grid-cols-2 items-stretch sm:flex sm:flex-col sm:items-center`}
 `
 
 const Image = styled.img``
 
 const ImageLogo = styled.img`
-    ${tw`max-w-[280px] mb-8`}
+    ${tw`max-w-[280px] mb-8 sm:hidden`}
 `
 
 const ImageSuccess = styled.img`

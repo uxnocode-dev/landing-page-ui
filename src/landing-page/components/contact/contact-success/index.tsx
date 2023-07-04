@@ -2,11 +2,18 @@ import React from 'react'
 import Styles from './styles'
 import images from '@/assets/images'
 import landingPage from '@/assets/landing-page'
+import { useWindowSize } from '@/hooks/window-size.hook'
 
 const LPContactSuccess: React.FC = () => {
+    const { isMobile } = useWindowSize()
+
+    const avatarIMG = !isMobile
+        ? landingPage.AvatarContact
+        : landingPage.AvatarContactMobile
+
     return (
         <Styles.Container>
-            <Styles.Image src={landingPage.AvatarContact} />
+            <Styles.Image src={avatarIMG} />
 
             <Styles.Section>
                 <Styles.ImageLogo src={images.Logo} />

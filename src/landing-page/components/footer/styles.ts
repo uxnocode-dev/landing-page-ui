@@ -40,7 +40,7 @@ const Image = styled.img`
 `
 
 const ItemsContainer = styled.article`
-    ${tw`grid sm:grid-cols-1! sm:gap-4`}
+    ${tw`grid sm:grid-cols-1! sm:gap-4 sm:px-5`}
 `
 
 const Item = styled.div``

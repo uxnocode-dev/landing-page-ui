@@ -1,17 +1,18 @@
 import React, { useState } from 'react'
 import Styles from './styles'
 import images from '@/assets/images'
-import theme from '@/styles/ts/theme'
+import LPSideMenu from '../side-menu'
+import LPModalCareer from '../modal-career'
+import { FaGripLines } from 'react-icons/fa'
 import { scrollTo } from '@/functions/scroll-to.function'
 import useScrollPosition from '@/hooks/scroll-position.hook'
 import { LANDING_PAGE_NAVIGATION } from '@/contants/landing-page.contant'
 import { ILandingPageMenuItem } from '@/components/@interface/landing-page-menu.interface'
-import LPSideMenu from '../side-menu'
-import { FaGripLines } from 'react-icons/fa'
 
 const LPHeader: React.FC = () => {
     const isScrollPastPosition = useScrollPosition(50)
     const [showSideMenu, setShowSideMenu] = useState(false)
+    const [showModalCareer, setShowModalCareer] = useState(false)
 
     const items: ILandingPageMenuItem[] = [
         { title: 'Topo', id: LANDING_PAGE_NAVIGATION.top },
@@ -20,11 +21,13 @@ const LPHeader: React.FC = () => {
         { title: 'Cases', id: LANDING_PAGE_NAVIGATION.cases },
         { title: 'FAQs', id: LANDING_PAGE_NAVIGATION.faq },
         { title: 'Contato', id: LANDING_PAGE_NAVIGATION.contact },
-        { title: 'Carreira', id: LANDING_PAGE_NAVIGATION.career },
-        { title: 'Entrar', action: () => {} }
+        { title: 'Carreira', action: () => setShowModalCareer(true) },
+        { isSoon: true, title: 'Entrar', action: () => {} }
     ]
 
     const toggleSideMenuOpen = () => setShowSideMenu(!showSideMenu)
+
+    const handleClickLogo = () => scrollTo(LANDING_PAGE_NAVIGATION.top)
 
     const handleClickItem = (item: ILandingPageMenuItem) => {
         if (item.action) item.action()
@@ -42,7 +45,7 @@ const LPHeader: React.FC = () => {
         <>
             <Styles.Header style={headerStyle}>
                 <Styles.Container>
-                    <Styles.Image src={images.Logo} />
+                    <Styles.Image src={images.Logo} onClick={handleClickLogo} />
 
                     <Styles.Group>
                         {items.map((item, index) => (
@@ -50,6 +53,10 @@ const LPHeader: React.FC = () => {
                                 key={index}
                                 onClick={() => handleClickItem(item)}
                             >
+                                {item.isSoon && (
+                                    <Styles.Badge>Em breve</Styles.Badge>
+                                )}
+
                                 {item.title}
                             </Styles.Link>
                         ))}
@@ -66,6 +73,11 @@ const LPHeader: React.FC = () => {
                 show={showSideMenu}
                 onClose={() => setShowSideMenu(false)}
                 onSelect={item => handleClickItem(item)}
+            />
+
+            <LPModalCareer
+                isOpen={showModalCareer}
+                onBackdropClick={() => setShowModalCareer(false)}
             />
         </>
     )

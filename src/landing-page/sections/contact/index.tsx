@@ -37,9 +37,7 @@ const LPContact: React.FC = () => {
                 html: getBudgetTemplate(userData, model)
             }
 
-            console.log(emailDTO.html)
-
-            const { data } = await emailService.send({})
+            const { data } = await emailService.send(emailDTO)
             setIsSuccess(true)
             alertService.success(data.message)
         } catch (error) {

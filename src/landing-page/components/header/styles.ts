@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import tw from 'twin.macro'
 
 const Header = styled.header`
-    ${tw`w-full fixed top-0 left-0 z-[2]`}
+    ${tw`w-full fixed top-0 left-0 z-[3]`}
     height: ${({ theme }) => theme.spacing.landing_page_header_height};
     background: #ffffff26;
 `
@@ -21,7 +21,7 @@ const Group = styled.section`
 `
 
 const Link = styled.a`
-    ${tw`ml-10 cursor-pointer`}
+    ${tw`ml-10 cursor-pointer relative`}
 
     &:hover,
     &:last-of-type {
@@ -34,11 +34,19 @@ const Button = styled.button`
     ${tw`hidden text-lg sm:block sm:ml-auto`}
 `
 
+const Badge = styled.span`
+    ${tw`p-0.5 px-2 rounded-md font-light text-[0.75rem] absolute left-6 bottom-5`}
+    color: ${({ theme }) => theme.colors.white};
+    background: ${({ theme }) => theme.colors.primary};
+    white-space: nowrap;
+`
+
 export default {
     Container,
     Header,
     Button,
     Image,
     Group,
+    Badge,
     Link
 }

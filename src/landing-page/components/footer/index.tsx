@@ -3,9 +3,12 @@ import Styles from './styles'
 import images from '@/assets/images'
 import LPSocialMedia from '../social-media'
 import { scrollTo } from '@/functions/scroll-to.function'
+import { SOCIAL_MEDIA } from '@/contants/social-media.constant'
 import { LANDING_PAGE_NAVIGATION } from '@/contants/landing-page.contant'
 
 const LPFooter: React.FC = () => {
+    const openURL = (url: string) => window.open(url, '_blank')
+
     const columns = [
         {
             title: `Mapa do site`,
@@ -37,37 +40,33 @@ const LPFooter: React.FC = () => {
         {
             title: `Institucional`,
             items: [
-                { title: `Sobre nós`, action: () => {} },
+                {
+                    title: `Sobre nós`,
+                    action: () =>
+                        scrollTo(LANDING_PAGE_NAVIGATION.differentials)
+                },
                 { title: `Carreira`, action: () => {} },
-                { title: `Novidades`, action: () => {} },
-                { title: `Contato`, action: () => {} }
+                {
+                    title: `Contato`,
+                    action: () => scrollTo(LANDING_PAGE_NAVIGATION.contact)
+                }
             ]
         },
         {
             title: `Recursos`,
             items: [
-                { title: `Blog`, action: () => {} },
-                { title: `Newsletter`, action: () => {} },
-                { title: `Eventos`, action: () => {} },
-                { title: `FAQs`, action: () => {} }
+                {
+                    title: `FAQs`,
+                    action: () => scrollTo(LANDING_PAGE_NAVIGATION.faq)
+                }
             ]
         },
         {
             title: `Social`,
-            items: [
-                { title: `Instagram`, action: () => {} },
-                { title: `LinkedIn`, action: () => {} },
-                { title: `Behance`, action: () => {} }
-            ]
-        },
-        {
-            title: `Legal`,
-            items: [
-                { title: `Termos de uso`, action: () => {} },
-                { title: `Privacidade`, action: () => {} },
-                { title: `Cookies`, action: () => {} },
-                { title: `Licenças`, action: () => {} }
-            ]
+            items: SOCIAL_MEDIA.map(item => ({
+                title: item.title,
+                action: () => openURL(item.link)
+            }))
         }
     ]
 

@@ -75,7 +75,7 @@ const LPFaq: React.FC = () => {
                 ))}
             </Styles.Content>
 
-            <Styles.Box>
+            {/* <Styles.Box>
                 <Styles.Image src={landingPage.AvatarFAQ} />
 
                 <Styles.BoxTitle>
@@ -87,7 +87,7 @@ const LPFaq: React.FC = () => {
                 </Styles.BoxText>
 
                 <AppButton>Enviar e-mail</AppButton>
-            </Styles.Box>
+            </Styles.Box> */}
         </Styles.Container>
     )
 }

@@ -3,7 +3,11 @@ import styled from 'styled-components'
 import { AppButton } from '@/styles/ts/components'
 
 const Container = styled.section`
-    ${tw`flex flex-col py-8`}
+    ${tw`flex flex-col items-center py-8`}
+`
+
+const Image = styled.img`
+    ${tw`w-28 mb-2`}
 `
 
 const Title = styled.h4`
@@ -11,7 +15,7 @@ const Title = styled.h4`
 `
 
 const Group = styled.article`
-    ${tw`w-full flex flex-col mt-16`}
+    ${tw`w-full flex flex-col my-10`}
 `
 
 const Item = styled.a`
@@ -26,4 +30,4 @@ const Button = styled(AppButton)`
     ${tw`mt-auto`}
 `
 
-export default { Container, Group, Button, Item, Title }
+export default { Container, Group, Button, Item, Title, Image }

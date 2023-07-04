@@ -1,8 +1,10 @@
 import React from 'react'
 import Styles from './styles'
+import images from '@/assets/images'
+import LPSocialMedia from '../social-media'
+import landingPage from '@/assets/landing-page'
 import AppSideMenu from '@/components/common/app-side-menu'
 import { ILandingPageMenuItem } from '@/components/@interface/landing-page-menu.interface'
-import landingPage from '@/assets/landing-page'
 
 interface ISideMenuProps {
     show: boolean
@@ -23,7 +25,9 @@ const LPSideMenu: React.FC<ISideMenuProps> = props => {
             imageBg={landingPage.SideMenuBG}
         >
             <Styles.Container>
+                <Styles.Image src={images.LogoMascot} />
                 <Styles.Title>uxnocode</Styles.Title>
+
                 <Styles.Group>
                     {items.map((item, index) => (
                         <Styles.Item key={index} onClick={() => onSelect(item)}>
@@ -31,6 +35,8 @@ const LPSideMenu: React.FC<ISideMenuProps> = props => {
                         </Styles.Item>
                     ))}
                 </Styles.Group>
+
+                <LPSocialMedia />
             </Styles.Container>
         </AppSideMenu>
     )

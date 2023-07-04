@@ -10,7 +10,7 @@ const LPDifferentials: React.FC = () => {
         'Interesse de verdade em entender o seu negócio e não somente desenvolver',
         'Equipe de ux focada em pesquisas para descobrir e organizar as informações',
         'Uma equipe multidisciplinar dedicada em cada projeto',
-        'Organização e acompanhamento do projeto pelo no ecossistema exclusivo uxnocode',
+        'Organização e acompanhamento do projeto pelo ecossistema exclusivo uxnocode',
         'Comunicação clara e simples com nossos clientes',
         'Desenvolvimento no-code, low-code e code'
     ]
