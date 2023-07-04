@@ -56,7 +56,7 @@ const LPBudgetFlow: React.FC<ILPBudgetFlowProps> = ({ onSubmit }) => {
     const handleNext = () => {
         if (isLastStep) handleSubmit()
         else {
-            scrollTo(LANDING_PAGE_NAVIGATION.contact, 0)
+            // scrollTo(LANDING_PAGE_NAVIGATION.contact, 0)
             animate(() => setCurrentSectionIndex(prev => prev + 1))
         }
     }

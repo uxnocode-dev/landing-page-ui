@@ -48,7 +48,7 @@ const LPHero: React.FC = () => {
     useEffect(() => {
         const interval = setInterval(
             () => setCurrentTitleIndex(prev => prev + 1),
-            12000
+            6000
         )
 
         return () => {

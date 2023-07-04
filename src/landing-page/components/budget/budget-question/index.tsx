@@ -27,7 +27,11 @@ const LPBudgetQuestion: React.FC<ILPBudgetQuestionProps> = props => {
                 {data.order}. {data.title}
             </Styles.Title>
 
-            <Styles.Content>
+            <Styles.Content
+                style={{
+                    gridTemplateColumns: `repeat(${data.options.length}, 1fr)`
+                }}
+            >
                 {data.options.map((item, index) => (
                     <Styles.Card
                         key={index}

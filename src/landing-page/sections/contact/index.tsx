@@ -12,6 +12,7 @@ import { LANDING_PAGE_NAVIGATION } from '@/contants/landing-page.contant'
 import LPContactForm from '@/landing-page/components/contact/contact-form'
 import LPContactSuccess from '@/landing-page/components/contact/contact-success'
 import { IBudgetSectionAnswer } from '@/landing-page/components/budget/budget-section'
+import LPSectionTitle from '@/landing-page/components/section-title'
 
 const emailService = new EmailService()
 const alertService = new AlertService()
@@ -59,6 +60,10 @@ const LPContact: React.FC = () => {
 
     return (
         <Styles.Container id={LANDING_PAGE_NAVIGATION.contact}>
+            <LPSectionTitle
+                title="Contato"
+                className="relative bottom-[68px] sm:bottom-8"
+            />
             <Styles.Content>{getCurrentContent()}</Styles.Content>
         </Styles.Container>
     )

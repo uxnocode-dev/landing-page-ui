@@ -12,14 +12,14 @@ const Title = styled.h1`
 `
 
 const Content = styled.section`
-    ${tw`w-full grid gap-10 grid-cols-3 items-stretch sm:grid-cols-1`}
+    ${tw`w-full grid gap-10 grid-cols-3 items-stretch sm:grid-cols-1!`}
 `
 
 interface ICardProps {
     isActive: boolean
 }
 const Card = styled.div<ICardProps>`
-    ${tw`flex min-h-[288px] p-6 items-center justify-center text-center rounded-xl cursor-pointer transition-all duration-500`}
+    ${tw`flex min-h-[258px] p-6 items-center justify-center text-center rounded-xl cursor-pointer transition-all duration-500`}
     ${tw`sm:min-h-[auto]`}
 
     background: ${({ theme }) => theme.colors.bgSecondary};

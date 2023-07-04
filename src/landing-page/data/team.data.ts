@@ -19,6 +19,6 @@ export const TEAM_DATA = [
     {
         name: `Andrei Casagrande`,
         image: landingPage.team.AndreiCasagrande,
-        role: `Gerente de projetos`
+        role: `Head de pessoas`
     }
 ]

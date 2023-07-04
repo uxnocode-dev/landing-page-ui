@@ -9,7 +9,7 @@ const mobileStyle = css`
         ${tw`w-full relative`}
 
         > h4 {
-            ${tw`w-full text-center pointer-events-none`}
+            ${tw`w-full text-center`}
         }
 
         > button {

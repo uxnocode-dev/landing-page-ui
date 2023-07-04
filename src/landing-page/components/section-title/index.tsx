@@ -4,15 +4,16 @@ import ScrollAnimation from '@/components/common/scroll-animation'
 
 interface ILPSectionTitleProps {
     title: string
+    className?: string
     shadowMode?: ShadowModeType
 }
 
 const LPSectionTitle: React.FC<ILPSectionTitleProps> = props => {
-    const { title, shadowMode = 'primary' } = props
+    const { title, shadowMode = 'primary', className = '' } = props
 
     return (
         <ScrollAnimation animation="fadeInDown">
-            <Styles.Container>
+            <Styles.Container className={className}>
                 <Styles.ShadowTitle mode={shadowMode}>
                     {title}
                 </Styles.ShadowTitle>

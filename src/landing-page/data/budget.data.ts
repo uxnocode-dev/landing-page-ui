@@ -36,11 +36,7 @@ export const BUDGET_QUESTION_DATA: IBudgetQuestion[] = [
     {
         order: 5,
         title: `Quem irá tomar as decisões nesse projeto?`,
-        options: [
-            `Sou pessoa física`,
-            `Empresa sem sócios`,
-            `Empresa com sócios`
-        ]
+        options: [`Somente eu`, `Tenho sócios`]
     }
 ]
 
