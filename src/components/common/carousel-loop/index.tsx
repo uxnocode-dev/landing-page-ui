@@ -12,8 +12,8 @@ interface ICarouselLoopProps {
 const CarouselLoop: React.FC<ICarouselLoopProps> = props => {
     const {
         children,
-        slidesPerView = 4,
         speed = 2000,
+        slidesPerView = 4,
         stopOnHover = false
     } = props
 
@@ -25,6 +25,7 @@ const CarouselLoop: React.FC<ICarouselLoopProps> = props => {
         if (!stopOnHover || !swiperRef.current.swiper) return
         const swiper = swiperRef.current.swiper
 
+        console.log(isHovered)
         if (isHovered) swiper.autoplay.stop()
         else swiper.autoplay.start()
     }, [isHovered])

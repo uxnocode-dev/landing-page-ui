@@ -21,7 +21,7 @@ const LPTechnologies: React.FC = () => {
                 </Styles.Text>
 
                 <Styles.Content>
-                    <CarouselLoop stopOnHover>
+                    <CarouselLoop stopOnHover speed={4000}>
                         {items.map((item, index) => (
                             <Styles.Image
                                 key={index}

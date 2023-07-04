@@ -20,11 +20,8 @@ const ContainerWrapper = styled.section<IContainerWrapperProps>`
 
     ${tw`sm:bg-cover!`}
 
-    @media (min-width: 640px) {
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
+    @media (max-width: 640px) {
+        animation: none !important;
     }
 
     @keyframes zoom {
