@@ -2,7 +2,7 @@ import landingPage from '@/assets/landing-page'
 
 export const TEAM_DATA = [
     {
-        name: `José Thiago. C Araújo`,
+        name: `José Thiago C. Araújo`,
         image: landingPage.team.ThiagoAraujo,
         role: `Head de processos e design`,
         linkedinURL: `https://www.linkedin.com/in/jos%C3%A9-thiago-coutinho-de-ara%C3%BAjo-07810522b/`,
