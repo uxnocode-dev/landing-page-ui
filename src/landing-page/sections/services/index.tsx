@@ -43,7 +43,6 @@ const LPServices: React.FC = () => {
             topics: [
                 'Entendimento das histórias',
                 'Arquitetura do projeto',
-                'Geração de build web e mobile',
                 'Modularização',
                 'Integração via APIs',
                 'Modelagem de banco de dados'

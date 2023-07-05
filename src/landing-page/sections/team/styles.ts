@@ -1,4 +1,5 @@
 import { AppContainer } from '@/styles/ts/components'
+import { neon } from '@/styles/ts/mixins/neon.mixin'
 import styled from 'styled-components'
 import tw from 'twin.macro'
 
@@ -31,6 +32,7 @@ const Card = styled.article`
 
             > a {
                 transform: scale(1.1);
+                ${({ theme }) => neon(theme.colors.secondary)}
             }
         }
 
