@@ -22,10 +22,9 @@ const CarouselLoop: React.FC<ICarouselLoopProps> = props => {
     const [isHovered, setIsHovered] = useState<boolean>(false)
 
     useEffect(() => {
-        if (!stopOnHover || !swiperRef.current.swiper) return
-        const swiper = swiperRef.current.swiper
+        if (!stopOnHover || !swiperRef.current) return
+        const swiper = swiperRef.current
 
-        console.log(isHovered)
         if (isHovered) swiper.autoplay.stop()
         else swiper.autoplay.start()
     }, [isHovered])

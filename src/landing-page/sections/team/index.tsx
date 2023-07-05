@@ -1,5 +1,6 @@
 import React from 'react'
 import Styles from './styles'
+import { FaLinkedin } from 'react-icons/fa'
 import { useWindowSize } from '@/hooks/window-size.hook'
 import { TEAM_DATA } from '@/landing-page/data/team.data'
 import CarouselLoop from '@/components/common/carousel-loop'
@@ -21,9 +22,24 @@ const LPTeam: React.FC = () => {
                     <CarouselLoop stopOnHover slidesPerView={slidesPerView}>
                         {TEAM_DATA.map((item, index) => (
                             <Styles.Card key={index}>
-                                <Styles.Image src={item.image} />
+                                <Styles.CardImageContainer>
+                                    <Styles.Image src={item.image} />
+
+                                    {!!item.linkedinURL && (
+                                        <Styles.LinkedinLink
+                                            target="_blank"
+                                            href={item.linkedinURL}
+                                        >
+                                            <FaLinkedin />
+                                        </Styles.LinkedinLink>
+                                    )}
+                                </Styles.CardImageContainer>
+
                                 <Styles.Title>{item.name}</Styles.Title>
                                 <Styles.CardText>{item.role}</Styles.CardText>
+                                <Styles.CardTextAbbr>
+                                    {item.abbreviation}
+                                </Styles.CardTextAbbr>
                             </Styles.Card>
                         ))}
                     </CarouselLoop>

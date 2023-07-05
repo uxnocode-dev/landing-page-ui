@@ -9,6 +9,10 @@ const Container = styled.article`
     span {
         ${tw`sm:mb-0`}
     }
+
+    > span {
+        ${tw`sm:mr-1`}
+    }
 `
 
 const Line = styled.br``

@@ -29,11 +29,16 @@ const LPSideMenu: React.FC<ISideMenuProps> = props => {
                 <Styles.Title>uxnocode</Styles.Title>
 
                 <Styles.Group>
-                    {items.map((item, index) => (
-                        <Styles.Item key={index} onClick={() => onSelect(item)}>
-                            {item.title}
-                        </Styles.Item>
-                    ))}
+                    {items
+                        .filter(({ isSoon }) => !isSoon)
+                        .map((item, index) => (
+                            <Styles.Item
+                                key={index}
+                                onClick={() => onSelect(item)}
+                            >
+                                {item.title}
+                            </Styles.Item>
+                        ))}
                 </Styles.Group>
 
                 <LPSocialMedia />

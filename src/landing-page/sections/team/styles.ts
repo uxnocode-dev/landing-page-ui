@@ -24,8 +24,14 @@ const Card = styled.article`
     }
 
     &:hover {
-        > img {
-            transform: scale(0.94);
+        > figure {
+            > img {
+                transform: scale(0.94);
+            }
+
+            > a {
+                transform: scale(1.1);
+            }
         }
 
         > h5 {
@@ -35,11 +41,15 @@ const Card = styled.article`
 `
 
 const Image = styled.img`
-    ${tw`rounded-md`}
+    ${tw`rounded-md w-24 h-24 object-cover`}
 `
 
 const Title = styled.h5`
     ${tw`mt-1 mb-0.5 text-sm font-semibold text-center`}
+`
+
+const CardImageContainer = styled.figure`
+    ${tw`relative`}
 `
 
 const CardText = styled.p`
@@ -47,8 +57,20 @@ const CardText = styled.p`
     color: rgba(255, 255, 255, 0.5);
 `
 
+const CardTextAbbr = styled.p`
+    ${tw`text-[0.75rem] font-light text-center`}
+    color: rgba(255, 255, 255, 0.80);
+`
+
+const LinkedinLink = styled.a`
+    ${tw`absolute bottom-1 right-1 text-lg`}
+`
+
 export default {
+    CardImageContainer,
     ContainerWrapper,
+    CardTextAbbr,
+    LinkedinLink,
     Container,
     Content,
     Text,

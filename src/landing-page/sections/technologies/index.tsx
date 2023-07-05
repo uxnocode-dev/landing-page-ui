@@ -7,9 +7,13 @@ const LPTechnologies: React.FC = () => {
     const items = [
         { title: `AWS`, url: landingPage.technologies.AWS },
         { title: `Bubble`, url: landingPage.technologies.Bubble },
+        { title: `Figma`, url: landingPage.technologies.Figma },
         { title: `Flutter Flow`, url: landingPage.technologies.FlutterFlow },
+        { title: `Firebase`, url: landingPage.technologies.Firebase },
         { title: `Jira`, url: landingPage.technologies.Jira },
-        { title: `React`, url: landingPage.technologies.React }
+        { title: `React`, url: landingPage.technologies.React },
+        { title: `Angular`, url: landingPage.technologies.Angular },
+        { title: `Vue`, url: landingPage.technologies.Vue }
     ]
 
     return (
@@ -21,7 +25,7 @@ const LPTechnologies: React.FC = () => {
                 </Styles.Text>
 
                 <Styles.Content>
-                    <CarouselLoop stopOnHover speed={4000}>
+                    <CarouselLoop slidesPerView={6} stopOnHover speed={4000}>
                         {items.map((item, index) => (
                             <Styles.Image
                                 key={index}

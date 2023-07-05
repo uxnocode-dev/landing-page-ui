@@ -80,11 +80,10 @@ const LPModalCareer: React.FC<IModalSuccessProps> = props => {
 
                 <Styles.Form onSubmit={onSubmit}>
                     <Styles.Logoimage src={images.Logo} />
-                    <Styles.Title>Venha ser um(a) uxnocoder!</Styles.Title>
                     <Styles.Text>
-                        Deixe os seus dados abaixo que nós vamos entrar em
-                        contato com você para entender melhor como podemos
-                        ajudar a potencializar o sucesso do seu projeto!
+                        Além de entender o nosso cliente, nós também entendemos
+                        você! Afinal, nós também somos devs e designers . Vem
+                        ser uxnocoder!
                     </Styles.Text>
 
                     <AppInput
@@ -114,10 +113,10 @@ const LPModalCareer: React.FC<IModalSuccessProps> = props => {
                     <AppButtonNavigator
                         typePrev="button"
                         typeNext="submit"
-                        onNext={onSubmit}
+                        onNext={() => {}}
                         onPrev={closeModal}
                         disabledNext={!isValid}
-                        className="self-end sm:mt-4 sm:self-center"
+                        className="self-end mt-auto sm:mt-4 sm:self-center"
                     />
                 </Styles.Form>
             </Styles.Container>

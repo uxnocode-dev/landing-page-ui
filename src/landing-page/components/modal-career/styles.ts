@@ -14,10 +14,6 @@ const Form = styled.form`
 
     > div {
         ${tw`w-full`}
-
-        &:first-of-type {
-            /* ${tw`mt-auto`} */
-        }
     }
 `
 
@@ -25,19 +21,14 @@ const Logoimage = styled.img`
     ${tw`max-w-[200px] sm:hidden`}
 `
 
-const Title = styled.h3`
-    ${tw`font-bold text-[1.25rem] text-center my-3`}
-`
-
 const Text = styled.p`
-    ${tw`text-center text-sm mb-2`}
+    ${tw`text-center text-sm my-5`}
 `
 
 export default {
     AvatarImage,
     Container,
     Logoimage,
-    Title,
     Form,
     Text
 }

@@ -6,6 +6,7 @@ export class AlertService {
     private readonly defaultErrorMessage = `Ocorreu um erro ao processar a solicitação`
 
     private defaultConfig: AlertConfigType = {
+        theme: 'dark',
         autoClose: 5000,
         draggable: true,
         transition: Slide,
