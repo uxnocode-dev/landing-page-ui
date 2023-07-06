@@ -13,6 +13,7 @@ interface IAppButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string
     isDisabled?: boolean
     icon?: React.ReactNode
+    hoverAnimation?: boolean
     children: React.ReactNode
     colorMode?: AppButtonColorMode
 }
@@ -24,16 +25,20 @@ const AppButton: React.FC<IAppButtonProps> = props => {
         className,
         isDisabled,
         showIcon = true,
+        hoverAnimation = true,
         colorMode = 'primary',
         icon = <FaArrowRight />
     } = props
+
+    const hoverAnimationClassName = hoverAnimation ? 'animation-hover' : ''
+    const classNameControl = `${className} ${hoverAnimationClassName}`
 
     return (
         <Styles.Button
             onClick={onClick}
             disabled={isDisabled}
-            className={className}
             colorMode={colorMode}
+            className={classNameControl}
         >
             <Styles.Text>{children}</Styles.Text>
             {showIcon && <Styles.Icon>{icon}</Styles.Icon>}

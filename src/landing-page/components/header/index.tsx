@@ -2,17 +2,20 @@ import React, { useState } from 'react'
 import Styles from './styles'
 import images from '@/assets/images'
 import LPSideMenu from '../side-menu'
-import LPModalCareer from '../modal-career'
 import { FaGripLines } from 'react-icons/fa'
 import { scrollTo } from '@/functions/scroll-to.function'
 import useScrollPosition from '@/hooks/scroll-position.hook'
 import { LANDING_PAGE_NAVIGATION } from '@/contants/landing-page.contant'
 import { ILandingPageMenuItem } from '@/components/@interface/landing-page-menu.interface'
 
-const LPHeader: React.FC = () => {
+interface ILPHeaderProps {
+    openModalCareer: Function
+}
+
+const LPHeader: React.FC<ILPHeaderProps> = props => {
+    const { openModalCareer } = props
     const isScrollPastPosition = useScrollPosition(50)
     const [showSideMenu, setShowSideMenu] = useState(false)
-    const [showModalCareer, setShowModalCareer] = useState(false)
 
     const items: ILandingPageMenuItem[] = [
         { title: 'Topo', id: LANDING_PAGE_NAVIGATION.top },
@@ -21,7 +24,7 @@ const LPHeader: React.FC = () => {
         { title: 'Cases', id: LANDING_PAGE_NAVIGATION.cases },
         { title: 'FAQs', id: LANDING_PAGE_NAVIGATION.faq },
         { title: 'Contato', id: LANDING_PAGE_NAVIGATION.contact },
-        { title: 'Carreira', action: () => setShowModalCareer(true) },
+        { title: 'Carreira', action: () => openModalCareer() },
         { isSoon: true, title: 'Entrar', action: () => {} }
     ]
 
@@ -73,11 +76,6 @@ const LPHeader: React.FC = () => {
                 show={showSideMenu}
                 onClose={() => setShowSideMenu(false)}
                 onSelect={item => handleClickItem(item)}
-            />
-
-            <LPModalCareer
-                isOpen={showModalCareer}
-                onBackdropClick={() => setShowModalCareer(false)}
             />
         </>
     )

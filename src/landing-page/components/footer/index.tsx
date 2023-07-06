@@ -6,7 +6,12 @@ import { scrollTo } from '@/functions/scroll-to.function'
 import { SOCIAL_MEDIA } from '@/contants/social-media.constant'
 import { LANDING_PAGE_NAVIGATION } from '@/contants/landing-page.contant'
 
-const LPFooter: React.FC = () => {
+interface ILPFooterProps {
+    openModalCareer: Function
+}
+
+const LPFooter: React.FC<ILPFooterProps> = props => {
+    const { openModalCareer } = props
     const openURL = (url: string) => window.open(url, '_blank')
 
     const columns = [
@@ -45,7 +50,7 @@ const LPFooter: React.FC = () => {
                     action: () =>
                         scrollTo(LANDING_PAGE_NAVIGATION.differentials)
                 },
-                { title: `Carreira`, action: () => {} },
+                { title: `Carreira`, action: () => openModalCareer() },
                 {
                     title: `Contato`,
                     action: () => scrollTo(LANDING_PAGE_NAVIGATION.contact)
@@ -109,7 +114,7 @@ const LPFooter: React.FC = () => {
 
             <Styles.Footer>
                 <Styles.Text className="mr-auto sm:text-center sm:text-sm sm:mb-4">
-                    ® 2023 uxnocode.com | CNPJ: 46.182.874/0001-82 - Todos os
+                    ® 2023 uxnocode.com | CNPJ: 46.132.525/0001-81 - Todos os
                     direitos reservados.
                 </Styles.Text>
 
