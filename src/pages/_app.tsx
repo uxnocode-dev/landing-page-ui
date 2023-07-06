@@ -1,5 +1,5 @@
 import store from '@/store'
-import { ReactNode } from 'react'
+import { ReactNode, useEffect } from 'react'
 import { useMapState } from '@/hooks'
 import { Provider } from 'react-redux'
 import Layout from '@/layouts/default'
@@ -22,6 +22,10 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
     const layoutControl = (component: ReactNode) => {
         return <Layout>{component}</Layout>
     }
+
+    useEffect(() => {
+        console.log('v1.0.0')
+    }, [])
 
     return (
         <ThemeProvider theme={THEMES[theme]}>
