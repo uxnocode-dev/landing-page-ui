@@ -7,6 +7,7 @@ import Document, {
     DocumentInitialProps
 } from 'next/document'
 import React, { ReactElement } from 'react'
+import enviroments from '@/config/enviroments'
 import { ServerStyleSheet } from 'styled-components'
 import { ComponentsEnhancer } from 'next/dist/shared/lib/utils'
 
@@ -58,7 +59,23 @@ export default class MyDocument extends Document {
                     />
 
                     <link rel="shortcut icon" href="/favicon.png" />
+
+                    <script
+                        async
+                        src={`https://www.googletagmanager.com/gtag/js?id=${enviroments.analytics_id}`}
+                    ></script>
+
+                    <script
+                        dangerouslySetInnerHTML={{
+                            __html: `
+                                window.dataLayer = window.dataLayer || [];
+                                function gtag(){dataLayer.push(arguments);}
+                                gtag('js', new Date());
+                                gtag('config', ${enviroments.analytics_id});`
+                        }}
+                    ></script>
                 </Head>
+
                 <body>
                     <Main />
                     <NextScript />

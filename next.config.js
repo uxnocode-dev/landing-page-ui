@@ -8,8 +8,12 @@ const imagesConfig = {
     images: { disableStaticImages: true }
 }
 
+console.log(`[NEXT_CONFIG]: ${process.env.NODE_ENV}`)
+console.log(`[NEXT_BUILD_MODE]: ${process.env.BUILD_MODE}`)
+
 const nextConfig = {
     reactStrictMode: true,
+    trailingSlash: process.env.BUILD_MODE.trim() == 'static',
     webpack(config) {
         config.module.rules.push({
             test: /\.svg$/,
