@@ -13,6 +13,7 @@ import AppLoading from '@/components/common/app-loading'
 import { PersistGate } from 'redux-persist/integration/react'
 import { UiStateInterface } from '@/store/@interfaces/uiState.interface'
 import '@/styles/css/global.css'
+import enviroments from '@/config/enviroments'
 
 const persistor = persistStore(store)
 
@@ -23,7 +24,12 @@ const App: React.FC<AppProps> = ({ Component, pageProps }) => {
         return <Layout>{component}</Layout>
     }
 
+    const initADS = () => {
+        gtag('config', enviroments.ads_analytics_id)
+    }
+
     useEffect(() => {
+        initADS()
         console.log('v1.0.0')
     }, [])
 
