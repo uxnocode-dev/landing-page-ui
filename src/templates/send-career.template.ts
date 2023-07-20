@@ -41,6 +41,7 @@ export const getCareerTemplate = (data: ICareerForm) => {
         <td align="center">
           <div style="margin-bottom: 2rem">
             <p style="margin-bottom: 0rem">${data.name}</p>
+            <p style="margin-bottom: 0rem">${data.role}</p>
             <p style="margin-bottom: 0rem">${data.email}</p>
             <p style="margin-top: 0rem">${data.portfolioURL}</p>
           </div>
