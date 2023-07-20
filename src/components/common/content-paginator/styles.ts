@@ -7,7 +7,7 @@ const Container = styled.section`
 `
 
 const Content = styled.div`
-    ${tw`flex gap-4 w-full sm:overflow-x-auto sm:pb-8 sm:items-stretch`}
+    ${tw`flex gap-5 w-full sm:overflow-x-auto sm:pb-8 sm:items-stretch`}
     scroll-snap-type: x mandatory;
 `
 

@@ -37,11 +37,29 @@ const CardBody = styled.p`
     }
 `
 
+const AuthorContainer = styled.section`
+    ${tw`my-4 flex gap-3`}
+`
+
+const AuthorImage = styled.img`
+    ${tw`w-6 h-6 rounded-full object-cover`}
+`
+
+const AuthorName = styled.h5`
+    ${tw`text-sm font-semibold`}
+`
+
+const AuthorTestimony = styled.p``
+
 export default {
     Text,
     Card,
     Image,
     Container,
     CardTitle,
-    CardBody
+    CardBody,
+    AuthorImage,
+    AuthorName,
+    AuthorContainer,
+    AuthorTestimony
 }

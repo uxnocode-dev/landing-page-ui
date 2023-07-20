@@ -29,6 +29,23 @@ const LPCases: React.FC = () => {
                             {item.description}
                             <FiArrowUpRight />
                         </Styles.CardBody>
+
+                        {item.testimony && (
+                            <>
+                                <Styles.AuthorContainer>
+                                    <Styles.AuthorImage
+                                        src={item.authorImage}
+                                    />
+                                    <Styles.AuthorName>
+                                        {item.authorName}
+                                    </Styles.AuthorName>
+                                </Styles.AuthorContainer>
+
+                                <Styles.AuthorTestimony>
+                                    {item.testimony}
+                                </Styles.AuthorTestimony>
+                            </>
+                        )}
                     </Styles.Card>
                 ))}
             </LPContentPaginator>
