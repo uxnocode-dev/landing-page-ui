@@ -3,14 +3,6 @@ import { ICaseItemLP } from '@/interfaces/case.interface'
 
 export const CASES_DATA: ICaseItemLP[] = [
     {
-        title: `Bora Planejar`,
-        image: landingPage.cases.BoraPlanejar,
-        authorImage: landingPage.cases.AuthorDefault,
-        authorName: `Marcos`,
-        testimony: `Recentemente, contratei a uxnocode para um serviço de ui/ux de algumas páginas da nossa plataforma. A equipe foi profissional, entregando um trabalho de alta qualidade dentro do prazo estipulado. A comunicação foi cordial e eficiente e eles entenderam perfeitamente minhas necessidades sempre abertos ao feedback. Em resumo, foi uma ótima experiência.`,
-        description: `Sistema organizacional`
-    },
-    {
         title: `Organic lead`,
         image: landingPage.cases.Organic,
         authorImage: landingPage.cases.AuthorOrganic,
@@ -22,9 +14,17 @@ export const CASES_DATA: ICaseItemLP[] = [
         title: `Tradefy`,
         description: `Plataforma trader`,
         image: landingPage.cases.Tradefy,
-        authorImage: landingPage.cases.AuthorDefault,
-        authorName: ``,
-        testimony: ``
+        authorImage: landingPage.cases.AuthorTradefy,
+        authorName: `Arthur H.`,
+        testimony: `Quero deixar meu depoimento sincero para o serviço da uxnocode que foi sensacional, prestou todo suporte com reuniões desde o começo, atendendo o serviço de maneira excepcional do começo ao fim, não é a primeira vez que eu trabalho com eles e nem a última, recomendo a qualquer um que busque um serviço diferenciado e bem feito pro seu projeto`
+    },
+    {
+        title: `Bora Planejar`,
+        image: landingPage.cases.BoraPlanejar,
+        authorImage: landingPage.cases.AuthorBoraPlanejar,
+        authorName: `Marcos`,
+        testimony: `Recentemente, contratei a uxnocode para um serviço de ui/ux de algumas páginas da nossa plataforma. A equipe foi profissional, entregando um trabalho de alta qualidade dentro do prazo estipulado. A comunicação foi cordial e eficiente e eles entenderam perfeitamente minhas necessidades sempre abertos ao feedback. Em resumo, foi uma ótima experiência.`,
+        description: `Sistema organizacional`
     },
     {
         title: `Smarttec`,

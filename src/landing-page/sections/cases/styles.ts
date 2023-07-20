@@ -14,7 +14,7 @@ interface IImageProps {
     imageURL: string
 }
 const Image = styled.figure<IImageProps>`
-    ${tw`w-[394px] h-[240px] rounded-md bg-center transition-all duration-500 sm:w-full sm:h-[200px]`}
+    ${tw`w-[30vw] h-[236px] rounded-md bg-center transition-all duration-500 sm:w-full sm:h-[200px]`}
     background-image: ${({ imageURL }) => `url(${imageURL})`};
     background-size: 100%;
 

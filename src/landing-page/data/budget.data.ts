@@ -5,7 +5,7 @@ export const BUDGET_QUESTION_DATA: IBudgetQuestion[] = [
         order: 1,
         title: `Escolha a opção que melhor representa a sua necessidade`,
         options: [
-            `Quero desenvolve um novo site/aplicativo.`,
+            `Quero desenvolver um novo site/aplicativo.`,
             `Quero uma apresentação para buscar investidores.`,
             `Já tenho um site/aplicativo e quero melhorar a experiência para aumentar minhas vendas.`
         ]
