@@ -1,5 +1,6 @@
 import React from 'react'
 import Styles from './styles'
+import analytics from './analytics'
 import { setLoading } from '@/hooks'
 import images from '@/assets/images'
 import { BiLink } from 'react-icons/bi'
@@ -12,6 +13,7 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import { useWindowSize } from '@/hooks/window-size.hook'
 import AppInput from '@/components/common/@form/app-input'
 import { careerFormSchema } from '@/schemas/career.schema'
+import AppRadio from '@/components/common/@form/app-radio'
 import { ICareerForm } from '@/interfaces/career.interface'
 import { IEmailSendDTO } from '@/interfaces/email.interface'
 import { EMAIL_LIST } from '@/config/email/email-list.config'
@@ -20,7 +22,6 @@ import { AlertService } from '@/services/common/alert.service'
 import { getCareerTemplate } from '@/templates/send-career.template'
 import { AppModalInterface } from '@/interfaces/_app-modal.interface'
 import AppButtonNavigator from '@/components/common/@button/app-button-navigator'
-import AppRadio from '@/components/common/@form/app-radio'
 
 const emailService = new EmailService()
 const alertService = new AlertService()
@@ -55,6 +56,7 @@ const LPModalCareer: React.FC<IModalSuccessProps> = props => {
 
             const { data } = await emailService.send(emailDTO)
             alertService.success(data.message)
+            analytics.emitSend(model.role)
             closeModal()
             reset()
         } catch (error) {
