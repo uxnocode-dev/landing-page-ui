@@ -22,7 +22,7 @@ const Logoimage = styled.img`
 `
 
 const Text = styled.p`
-    ${tw`text-center text-sm my-5`}
+    ${tw`text-center text-sm my-4`}
 `
 
 export default {

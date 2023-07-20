@@ -12,6 +12,7 @@ export const scrollBar = (
     &::-webkit-scrollbar-thumb,
     &::-webkit-scrollbar {
         width: ${width};
+        height: ${width};
         background-color: ${color};
     }
 `

@@ -20,6 +20,7 @@ import { AlertService } from '@/services/common/alert.service'
 import { getCareerTemplate } from '@/templates/send-career.template'
 import { AppModalInterface } from '@/interfaces/_app-modal.interface'
 import AppButtonNavigator from '@/components/common/@button/app-button-navigator'
+import AppRadio from '@/components/common/@form/app-radio'
 
 const emailService = new EmailService()
 const alertService = new AlertService()
@@ -85,6 +86,16 @@ const LPModalCareer: React.FC<IModalSuccessProps> = props => {
                         você! Afinal, nós também somos devs e designers . Vem
                         ser uxnocoder!
                     </Styles.Text>
+
+                    <AppRadio
+                        id="role"
+                        error={errors.role}
+                        register={register}
+                        data={[
+                            { value: 'Desenvolvedor', label: 'Sou DEV' },
+                            { value: 'Designer', label: 'Sou designer' }
+                        ]}
+                    />
 
                     <AppInput
                         id="name"

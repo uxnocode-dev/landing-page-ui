@@ -1,5 +1,7 @@
 import Styles from './styles'
+import analytics from './analytics'
 import React, { useEffect, useState } from 'react'
+import { useWindowSize } from '@/hooks/window-size.hook'
 import AppPaginator from '@/components/common/app-paginator'
 import { IPaginatorConfig } from '@/interfaces/_paginator.interface'
 import { BUDGET_SECTION_DATA } from '@/landing-page/data/budget.data'
@@ -7,9 +9,6 @@ import AppButtonNavigator from '@/components/common/@button/app-button-navigator
 import LPBudgetSection, {
     IBudgetSectionAnswer
 } from '../../budget/budget-section'
-import { useWindowSize } from '@/hooks/window-size.hook'
-import { scrollTo } from '@/functions/scroll-to.function'
-import { LANDING_PAGE_NAVIGATION } from '@/contants/landing-page.contant'
 
 const animation = {
     hide: { opacity: 0 },
@@ -22,6 +21,7 @@ interface ILPBudgetFlowProps {
 
 const LPBudgetFlow: React.FC<ILPBudgetFlowProps> = ({ onSubmit }) => {
     const { isMobile } = useWindowSize()
+    const [currentPageGA, setCurrentPageGA] = useState(0)
     const [shouldAnimate, setShouldAnimate] = useState(false)
     const [currentSectionIndex, setCurrentSectionIndex] = useState(0)
     const [answers, setAnswers] = useState<IBudgetSectionAnswer[]>([])
@@ -55,10 +55,7 @@ const LPBudgetFlow: React.FC<ILPBudgetFlowProps> = ({ onSubmit }) => {
 
     const handleNext = () => {
         if (isLastStep) handleSubmit()
-        else {
-            // scrollTo(LANDING_PAGE_NAVIGATION.contact, 0)
-            animate(() => setCurrentSectionIndex(prev => prev + 1))
-        }
+        else animate(() => setCurrentSectionIndex(prev => prev + 1))
     }
 
     const handleAnswerChange = (model: IBudgetSectionAnswer) => {
@@ -78,7 +75,14 @@ const LPBudgetFlow: React.FC<ILPBudgetFlowProps> = ({ onSubmit }) => {
     }
 
     useEffect(() => {
-        setPagination({ ...pagination, page: currentSectionIndex + 1 })
+        const page = currentSectionIndex + 1
+
+        setPagination({ ...pagination, page })
+
+        if (page > currentPageGA) {
+            setCurrentPageGA(page)
+            analytics.emitCurrentPage(page)
+        }
     }, [currentSectionIndex])
 
     useEffect(() => {

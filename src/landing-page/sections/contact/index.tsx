@@ -13,6 +13,7 @@ import LPContactForm from '@/landing-page/components/contact/contact-form'
 import LPContactSuccess from '@/landing-page/components/contact/contact-success'
 import { IBudgetSectionAnswer } from '@/landing-page/components/budget/budget-section'
 import LPSectionTitle from '@/landing-page/components/section-title'
+import analytics from './analytics'
 
 const emailService = new EmailService()
 const alertService = new AlertService()
@@ -24,6 +25,7 @@ const LPContact: React.FC = () => {
 
     const handleSubmitForm = (model: IContactUserData) => {
         setUserData(model)
+        analytics.emitInit()
     }
 
     const handleSubmitFlow = async (model: IBudgetSectionAnswer[]) => {
@@ -40,6 +42,7 @@ const LPContact: React.FC = () => {
 
             const { data } = await emailService.send(emailDTO)
             setIsSuccess(true)
+            analytics.emitFinish()
             alertService.success(data.message)
         } catch (error) {
             alertService.error('Ocorreu um erro ao enviar o contato')

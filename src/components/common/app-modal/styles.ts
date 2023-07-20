@@ -1,3 +1,4 @@
+import { scrollBar } from '@/styles/ts/mixins/scroll-bar.mixin'
 import styled from 'styled-components'
 import tw from 'twin.macro'
 
@@ -16,7 +17,7 @@ const Backdrop = styled.section`
 `
 
 const ModalContainer = styled.article.attrs(animationIn)`
-    ${tw`p-6 pb-10 flex flex-col z-50 rounded-lg mx-14`}
+    ${tw`p-6 pr-2 pb-10 flex flex-col z-50 rounded-lg mx-14`}
     height: 40vh;
     background: ${({ theme }) => theme.colors.bgPrimary};
     max-height: 75vh;
@@ -26,7 +27,8 @@ const ModalContainer = styled.article.attrs(animationIn)`
 const ModalHeader = styled.div``
 
 const ModalBody = styled.div<CommonProps>`
-    ${tw`flex-auto overflow-y-auto overflow-x-hidden`}
+    ${tw`pr-4 flex-auto overflow-y-auto overflow-x-hidden`}
+    ${scrollBar('6px')}
 
     ::-webkit-scrollbar-thumb {
         border: 0px solid #ffffff;
