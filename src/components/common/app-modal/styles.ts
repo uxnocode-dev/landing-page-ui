@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components'
 import tw from 'twin.macro'
 
 const animationIn = {
-    className: 'animate__animated animate__fadeInDown'
+    className: 'animate__animated animate__fadeIn'
 }
 
 const fullMode = css`
