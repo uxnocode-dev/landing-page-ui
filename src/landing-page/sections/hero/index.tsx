@@ -24,10 +24,10 @@ const LPHero: React.FC<IHeroProps> = ({ openModal }) => {
 
                     <TypingText
                         text="Vamos tirar a sua ideia do papel e criar um app de sucesso juntos?"
-                        className="min-h-[144px] leading-[3rem] text-[2.75rem] mb-2 font-bold  sm:text-[1.2rem] sm:block"
+                        className="min-h-[144px] leading-[3rem] text-[2.75rem] mb-2 font-bold sm:text-[1.2rem] sm:block sm:leading-normal sm:text-center sm:min-h-0 sm:mb-6"
                     />
 
-                    <Styles.Text className="w-4/5">
+                    <Styles.Text className="w-4/5 sm:w-full">
                         <Styles.ColoredText>
                             Desenvolvemos apps{' '}
                         </Styles.ColoredText>
@@ -48,7 +48,7 @@ const LPHero: React.FC<IHeroProps> = ({ openModal }) => {
                     </AppButton>
                 </Styles.Content>
 
-                <HeroMock className="w-2/4" />
+                <HeroMock className="w-2/4 sm:w-full" />
             </Styles.Container>
 
             <HeroSocialProof />

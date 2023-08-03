@@ -3,15 +3,16 @@ import Styles from './styles'
 import { CASES_DATA } from '@/landing-page/data/cases.data'
 import LPSectionTitle from '@/landing-page/components/section-title'
 import ContentPaginator from '@/components/common/content-paginator'
+import { LANDING_PAGE_NAVIGATION } from '@/contants/landing-page.contant'
 
 const LPTestimony: React.FC = () => {
     const data = CASES_DATA.filter(({ testimony }) => !!testimony)
 
     return (
-        <Styles.Container>
+        <Styles.Container id={LANDING_PAGE_NAVIGATION.testimony}>
             <LPSectionTitle title="Depoimentos" />
 
-            <ContentPaginator itemsPerPage={4}>
+            <ContentPaginator itemsPerPage={4} contentClassName="mt-8">
                 {data.map((item, index) => (
                     <Styles.Card key={index}>
                         <Styles.Text>{item.testimony}</Styles.Text>

@@ -1,17 +1,19 @@
 import React from 'react'
 import Styles from './styles'
 import landingPage from '@/assets/landing-page'
+import { useWindowSize } from '@/hooks/window-size.hook'
 
 interface IHeroMockProps {
     className?: string
 }
 const HeroMock: React.FC<IHeroMockProps> = props => {
     const { className } = props
+    const { isMobile } = useWindowSize()
 
     return (
         <Styles.Container className={className}>
-            <Styles.Shadow />
-            <Styles.ImageMock src={landingPage.HeroMock} />
+            <Styles.Shadow isMobile={isMobile} />
+            <Styles.Image src={landingPage.HeroMock} />
         </Styles.Container>
     )
 }

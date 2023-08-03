@@ -5,13 +5,14 @@ import { useWindowSize } from '@/hooks/window-size.hook'
 import { TEAM_DATA } from '@/landing-page/data/team.data'
 import CarouselLoop from '@/components/common/carousel-loop'
 import LPSectionTitle from '@/landing-page/components/section-title'
+import { LANDING_PAGE_NAVIGATION } from '@/contants/landing-page.contant'
 
 const LPTeam: React.FC = () => {
     const { isMobile } = useWindowSize()
     const slidesPerView = isMobile ? 2 : 4
 
     return (
-        <Styles.ContainerWrapper>
+        <Styles.ContainerWrapper id={LANDING_PAGE_NAVIGATION.team}>
             <Styles.Container>
                 <LPSectionTitle
                     shadowMode="secondary"

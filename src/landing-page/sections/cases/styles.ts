@@ -7,11 +7,11 @@ const Container = styled(AppContainer)`
 `
 
 const Content = styled.article`
-    ${tw`mt-4 grid grid-cols-5 gap-12 items-center justify-items-center sm:grid-cols-1`}
+    ${tw`mt-4 grid grid-cols-5 gap-12 items-center justify-items-center sm:grid-cols-1 sm:mt-8`}
 `
 
 const Image = styled.img`
-    ${tw`w-4/5`}
+    ${tw`w-4/5 sm:w-2/4`}
 `
 
 export default {

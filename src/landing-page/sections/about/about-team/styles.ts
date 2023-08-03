@@ -83,10 +83,15 @@ const Container = styled.article`
 
 const Background = styled.div`
     ${backgroundAnimation}
-    ${tw`w-56 h-56 opacity-30 rounded-full absolute `}
+    ${tw`w-56 h-56 opacity-30 rounded-full absolute sm:w-80 sm:h-80`}
     background: ${({ theme }) => rgba(theme.colors.placeholder, 0.4)};
-    border: 40px solid ${({ theme }) => rgba(theme.colors.white, 0.2)};
-    outline: 40px solid ${({ theme }) => rgba(theme.colors.white, 0.2)};
+
+    border-style: solid;
+    outline-style: solid;
+
+    border-color: ${({ theme }) => rgba(theme.colors.white, 0.2)};
+    outline-color: ${({ theme }) => rgba(theme.colors.white, 0.2)};
+
     box-shadow: 0px 0px 0px 80px ${({ theme }) => rgba(theme.colors.white, 0.1)};
 `
 

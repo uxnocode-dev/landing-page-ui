@@ -19,11 +19,13 @@ const LPHeader: React.FC<ILPHeaderProps> = props => {
 
     const items: ILandingPageMenuItem[] = [
         { title: 'Topo', id: LANDING_PAGE_NAVIGATION.top },
-        { title: 'Serviços', id: LANDING_PAGE_NAVIGATION.services },
         { title: 'Diferenciais', id: LANDING_PAGE_NAVIGATION.differentials },
-        { title: 'Cases', id: LANDING_PAGE_NAVIGATION.cases },
+        { title: 'Projetos', id: LANDING_PAGE_NAVIGATION.cases },
+        { title: 'Desenvolvimento', id: LANDING_PAGE_NAVIGATION.development },
+        { title: 'Sobre nós', id: LANDING_PAGE_NAVIGATION.about },
+        { title: 'Depoimentos', id: LANDING_PAGE_NAVIGATION.testimony },
         { title: 'FAQs', id: LANDING_PAGE_NAVIGATION.faq },
-        { title: 'Contato', id: LANDING_PAGE_NAVIGATION.contact },
+        { title: 'Equipe', id: LANDING_PAGE_NAVIGATION.team },
         { title: 'Carreira', action: () => openModal() },
         { isSoon: true, title: 'Entrar', action: () => {} }
     ]

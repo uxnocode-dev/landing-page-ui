@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 import tw from 'twin.macro'
 
-const heroMockAnimation = css`
+const heroMockAnimation = (size: string) => css`
     animation: hero-mock-animation 6s ease-in-out infinite both;
 
     @keyframes hero-mock-animation {
@@ -10,8 +10,8 @@ const heroMockAnimation = css`
                 ${({ theme }) => theme.colors.placeholder};
         }
         50% {
-            box-shadow: 0px 0px 400px 140px
-                ${({ theme }) => theme.colors.secondary};
+            box-shadow: ${({ theme }) =>
+                `0px 0px 154px ${size} ${theme.colors.secondary}`};
         }
         100% {
             box-shadow: 0px 0px 154px 80px
@@ -21,17 +21,28 @@ const heroMockAnimation = css`
 `
 
 const Container = styled.article`
-    ${tw`relative`}
+    ${tw`relative h-[544px] sm:h-[480px]`}
 `
 
-const Shadow = styled.div`
-    ${heroMockAnimation}
-    ${tw`z-[-1] rounded-full w-20 h-20 absolute left-[28%] top-[34%]`}
+interface IShadowProps {
+    isMobile: boolean
+}
+const Shadow = styled.div<IShadowProps>`
+    ${({ isMobile }) => heroMockAnimation(isMobile ? '120px' : '180px')}
+    ${tw`rounded-full absolute left-[40%] top-[40%] sm:top-2/4 z-[-1]`}
     background: ${({ theme }) => theme.colors.secondary};
 `
 
-const ImageMock = styled.img`
-    ${tw`z-10 object-contain`}
+interface IImageProps {
+    src: string
+}
+const Image = styled.figure<IImageProps>`
+    ${tw`w-[400px] h-[100%] sm:absolute sm:w-[90vw]`}
+
+    background: ${({ src }) => `url("${src}")`};
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
 `
 
-export default { Container, Shadow, ImageMock }
+export default { Container, Shadow, Image }

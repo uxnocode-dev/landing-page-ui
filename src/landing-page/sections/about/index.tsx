@@ -3,19 +3,21 @@ import Styles from './styles'
 import AboutTeam from './about-team'
 import AppButton from '@/components/common/@button/app-button'
 import LPSectionTitle from '@/landing-page/components/section-title'
+import { LANDING_PAGE_NAVIGATION } from '@/contants/landing-page.contant'
 
 interface IAboutProps {
     openModal: Function
 }
 const LPAbout: React.FC<IAboutProps> = ({ openModal }) => {
     return (
-        <Styles.Container>
+        <Styles.Container id={LANDING_PAGE_NAVIGATION.about}>
             <LPSectionTitle title="Sobre nós" />
 
             <Styles.Content>
                 <AboutTeam className="h-full" />
 
                 <Styles.View>
+                    <Styles.Title>uxnocode</Styles.Title>
                     <Styles.Text>
                         Nós somos uma agência fundada por 4 sócios que são
                         apaixonados pelo que fazem e tem uma baita experiência

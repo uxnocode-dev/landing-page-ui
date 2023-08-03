@@ -1,6 +1,7 @@
 import React from 'react'
 import Styles from './styles'
 import landingPage from '@/assets/landing-page'
+import { useWindowSize } from '@/hooks/window-size.hook'
 import AppButton from '@/components/common/@button/app-button'
 import { LANDING_PAGE_NAVIGATION } from '@/contants/landing-page.contant'
 
@@ -9,6 +10,8 @@ interface IContactProps {
 }
 const LPContact: React.FC<IContactProps> = props => {
     const { openModal } = props
+    const { isMobile } = useWindowSize()
+
     return (
         <Styles.ContainerWrapper id={LANDING_PAGE_NAVIGATION.contact}>
             <Styles.Container>
@@ -19,9 +22,16 @@ const LPContact: React.FC<IContactProps> = props => {
                         tal marcar um papo sobre o seu projeto com um
                         especialista?!
                     </Styles.Text>
-                    <AppButton colorMode="white" onClick={() => openModal()}>
+                    <AppButton
+                        onClick={() => openModal()}
+                        colorMode={isMobile ? 'primary' : 'white'}
+                    >
                         Falar com especialista
                     </AppButton>
+
+                    <Styles.Small>
+                        Nós vamos responder esse contato no máximo em 1 hora.
+                    </Styles.Small>
                 </Styles.Content>
                 <Styles.Image src={landingPage.AvatarContact} />
             </Styles.Container>

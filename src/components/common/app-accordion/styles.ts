@@ -29,13 +29,20 @@ interface IContainerProps {
     enableMobileStyle?: boolean
 }
 const Container = styled.article<IContainerProps>`
-    ${tw`rounded-lg p-4`}
-    background: ${({ isOpen }) => (isOpen ? 'transparent' : 'transparent')};
+    ${tw`rounded-lg p-4 sm:rounded-xl! sm:px-4!`}
     ${({ enableMobileStyle }) => (enableMobileStyle ? mobileStyle : ``)}
+
+    @media (max-width: 640px) {
+        background: ${({ theme }) => theme.colors.bgSecondary};
+
+        > header > button {
+            color: ${({ theme }) => theme.colors.secondary};
+        }
+    }
 `
 
 const Header = styled.header`
-    ${tw`w-full flex items-center justify-between`}
+    ${tw`w-full flex items-center justify-between sm:gap-4`}
 `
 
 const Title = styled.h4`

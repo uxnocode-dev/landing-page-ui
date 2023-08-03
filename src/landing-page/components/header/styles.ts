@@ -21,11 +21,10 @@ const Group = styled.section`
 `
 
 const Link = styled.a`
-    ${tw`ml-10 cursor-pointer relative`}
+    ${tw`ml-4 cursor-pointer relative text-sm`}
 
     &:hover,
     &:last-of-type {
-        ${tw`font-semibold`}
         color: ${({ theme }) => theme.colors.secondary};
     }
 `
@@ -35,7 +34,7 @@ const Button = styled.button`
 `
 
 const Badge = styled.span`
-    ${tw`p-0.5 px-2 rounded-md font-light text-[0.75rem] absolute left-6 bottom-5`}
+    ${tw`p-0.5 px-2 rounded-md font-light text-[0.68rem] absolute left-6 bottom-4`}
     color: ${({ theme }) => theme.colors.white};
     background: ${({ theme }) => theme.colors.primary};
     white-space: nowrap;

@@ -25,7 +25,7 @@ const AppButton: React.FC<IAppButtonProps> = props => {
         children,
         className,
         isDisabled,
-        showIcon = true,
+        showIcon = false,
         hoverAnimation = true,
         colorMode = 'primary',
         icon = <FaArrowRight />

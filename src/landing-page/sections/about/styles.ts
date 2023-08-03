@@ -11,11 +11,15 @@ const Content = styled.article`
 `
 
 const View = styled.article`
-    ${tw`sm:mt-12`}
+    ${tw`sm:mt-12 sm:flex sm:flex-col sm:items-center`}
+`
+
+const Title = styled.h1`
+    ${tw`hidden font-medium text-center text-xl mb-6 tracking-[-1.763px] sm:flex`}
 `
 
 const Text = styled.p`
-    ${tw`mb-4`}
+    ${tw`mb-4 sm:text-center`}
 `
 
 const ColoredText = styled.span`
@@ -29,9 +33,10 @@ const HighlightText = styled.span`
 
 export default {
     Text,
-    ColoredText,
-    HighlightText,
-    Container,
+    View,
+    Title,
     Content,
-    View
+    Container,
+    ColoredText,
+    HighlightText
 }

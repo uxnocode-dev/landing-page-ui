@@ -66,7 +66,6 @@ const LPFaq: React.FC = () => {
                     <AppAccordion
                         key={index}
                         ref={item.ref}
-                        enableMobileStyle
                         title={item.question.title}
                         onOpen={() => onAcordionOpen(index)}
                     >

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import tw from 'twin.macro'
 
 const Container = styled(AppContainer)`
-    ${tw`px-0! grid grid-cols-[40% 1fr]`}
+    ${tw`px-0! grid grid-cols-[40% 1fr] sm:grid-cols-1 sm:px-4!`}
 
     > article {
         ${tw`p-8`}
@@ -11,7 +11,7 @@ const Container = styled(AppContainer)`
 `
 
 const ClientContainer = styled.article`
-    ${tw`flex flex-col items-center`}
+    ${tw`flex flex-col items-center sm:rounded-2xl sm:mb-4`}
     background: ${({ theme }) => theme.colors.bgSecondary};
 `
 
@@ -36,7 +36,7 @@ const ClientImage = styled.img`
 `
 
 const MarketContainer = styled.article`
-    ${tw`flex items-center gap-4`}
+    ${tw`flex items-center gap-4 sm:rounded-2xl sm:flex-col`}
     background: ${({ theme }) => theme.colors.primary};
 `
 
@@ -56,7 +56,7 @@ const MarketText = styled.p`
 `
 
 const MarketImage = styled.img`
-    ${tw`w-4/12 object-contain`}
+    ${tw`w-4/12 object-contain sm:order-2 sm:w-full`}
 `
 
 export default {
