@@ -1,20 +1,25 @@
 import React from 'react'
 import Styles from './styles'
 import HeroMock from './hero-mock'
+import { FiPenTool } from 'react-icons/fi'
 import HeroSocialProof from './hero-social-proof'
 import AppButton from '@/components/common/@button/app-button'
+import TypingText from '@/landing-page/components/typing-text'
 import LPSocialMedia from '@/landing-page/components/social-media'
 import { LANDING_PAGE_NAVIGATION } from '@/contants/landing-page.contant'
-import TypingText from '@/landing-page/components/typing-text'
 
 interface IHeroProps {
     openModal: Function
 }
 const LPHero: React.FC<IHeroProps> = ({ openModal }) => {
     return (
-        <>
+        <Styles.ContainerWrapper>
             <Styles.Container id={LANDING_PAGE_NAVIGATION.top}>
                 <Styles.Content>
+                    <Styles.PenIcon>
+                        <FiPenTool />
+                    </Styles.PenIcon>
+
                     <Styles.Row>
                         <LPSocialMedia />
                         <Styles.TextLight>
@@ -52,7 +57,7 @@ const LPHero: React.FC<IHeroProps> = ({ openModal }) => {
             </Styles.Container>
 
             <HeroSocialProof />
-        </>
+        </Styles.ContainerWrapper>
     )
 }
 

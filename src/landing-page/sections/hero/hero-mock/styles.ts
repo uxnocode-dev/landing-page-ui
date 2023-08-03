@@ -1,3 +1,4 @@
+import { fadeIn } from '@/styles/animation'
 import styled, { css } from 'styled-components'
 import tw from 'twin.macro'
 
@@ -20,7 +21,7 @@ const heroMockAnimation = (size: string) => css`
     }
 `
 
-const Container = styled.article`
+const Container = styled.article.attrs(fadeIn.default)`
     ${tw`relative h-[544px] sm:h-[480px]`}
 `
 

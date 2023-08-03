@@ -4,12 +4,14 @@ import development from './development'
 import technologies from './technologies'
 
 import HeroBG from './hero-bg.png'
+import Texture from './texture.png'
 import WorksBG from './works-bg.png'
 import HeroPig from './hero-pig.png'
 import HeroMock from './hero-mock.png'
 import AvatarFAQ from './avatar-faq.png'
 import HeroClient from './hero-client.png'
 import SideMenuBG from './side-menu-bg.png'
+import HeroPattern from './hero-pattern.png'
 import AvatarCareer from './avatar-career.png'
 import AvatarContact from './avatar-contact.png'
 import WorksBGMobile from './works-bg-mobile.png'
@@ -23,12 +25,14 @@ export default {
     cases,
     HeroBG,
     WorksBG,
+    Texture,
     HeroPig,
     HeroMock,
     AvatarFAQ,
     HeroClient,
     SideMenuBG,
     development,
+    HeroPattern,
     AvatarCareer,
     technologies,
     WorksBGMobile,

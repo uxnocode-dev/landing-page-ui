@@ -1,3 +1,4 @@
+import landingPage from '@/assets/landing-page'
 import { AppContainer } from '@/styles/ts/components'
 import styled from 'styled-components'
 import tw from 'twin.macro'
@@ -12,7 +13,8 @@ const Container = styled(AppContainer)`
 
 const ClientContainer = styled.article`
     ${tw`flex flex-col items-center sm:rounded-2xl sm:mb-4`}
-    background: ${({ theme }) => theme.colors.bgSecondary};
+    background: ${() => `url("${landingPage.Texture}")`};
+    background-size: 100%;
 `
 
 const ClientBadge = styled.span`
