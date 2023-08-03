@@ -46,7 +46,7 @@ const LPTestimony: React.FC = () => {
                             </Styles.AuthorContainer>
 
                             <Styles.BoldText>
-                                "{item.testimonyLabel}"
+                                {`"${item.testimonyLabel}"`}
                             </Styles.BoldText>
                         </Styles.Footer>
                     </Styles.Card>
