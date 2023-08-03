@@ -7,7 +7,7 @@ const Container = styled.section`
     ${tw`flex flex-col items-center py-8 px-12`}
 
     > button {
-        ${tw`mt-auto mb-8 w-full relative`}
+        ${tw`mb-6 w-full relative`}
     }
 
     > article > i {
@@ -42,7 +42,7 @@ const Item = styled.a`
 `
 
 const Button = styled(AppButton)`
-    ${tw`mt-auto`}
+    ${tw`mt-0`}
 `
 
 const Header = styled.header`

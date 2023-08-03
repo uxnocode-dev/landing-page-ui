@@ -54,13 +54,13 @@ const ModalContainer = styled.article.attrs(animationIn)`
 const ModalHeader = styled.div``
 
 const ModalBody = styled.div<CommonProps>`
-    ${tw`flex-auto overflow-y-auto overflow-x-hidden`}
-    ${scrollBar('6px')}
+    ${tw`flex-auto overflow-y-auto overflow-x-hidden px-4`}
+    ${scrollBar('2px')}
 
     ::-webkit-scrollbar-thumb {
         border: 0px solid #ffffff;
         background-color: ${({ theme, color }) =>
-            color || theme.colors.primary};
+            color || theme.colors.bgSecondary};
     }
 `
 

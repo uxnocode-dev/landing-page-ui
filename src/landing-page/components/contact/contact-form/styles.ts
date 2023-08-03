@@ -10,15 +10,15 @@ const Image = styled.img`
 `
 
 const ImageLogo = styled.img`
-    ${tw`max-w-[280px] mb-4 sm:my-8 sm:max-w-[140px]`}
+    ${tw`max-w-[280px] mb-4 sm:my-8 sm:max-w-[140px] sm:hidden`}
 `
 
 const Form = styled.form`
-    ${tw`flex flex-col items-center w-full`}
+    ${tw`flex flex-col items-center w-full sm:mt-2`}
 `
 
 const Title = styled.h2`
-    ${tw`mb-8 w-4/5 text-center font-semibold text-[1.25rem] sm:w-full`}
+    ${tw`mb-8 w-4/5 text-center font-semibold text-[1.25rem] sm:w-full sm:text-base`}
 `
 
 const Text = styled.p`

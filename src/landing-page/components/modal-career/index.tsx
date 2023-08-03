@@ -137,7 +137,7 @@ const LPModalCareer: React.FC<IModalSuccessProps> = props => {
                     <AppButton
                         type="submit"
                         isDisabled={!isValid}
-                        className="self-end mt-auto sm:mt-4 flex sm:self-center"
+                        className="self-end mt-auto sm:mt-4 flex sm:self-center sm:w-full"
                     >
                         Enviar
                     </AppButton>
