@@ -11,7 +11,9 @@ const HeroMock: React.FC<IHeroMockProps> = props => {
     const { isMobile } = useWindowSize()
 
     return (
-        <Styles.Container className={className}>
+        <Styles.Container
+            className={`${className} animate__animated animate__fadeIn animate__delay-2s`}
+        >
             <Styles.Shadow isMobile={isMobile} />
             <Styles.Image src={landingPage.HeroMock} />
         </Styles.Container>

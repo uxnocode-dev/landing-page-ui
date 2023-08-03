@@ -4,18 +4,6 @@ import tw from 'twin.macro'
 
 const Container = styled(AppContainer)`
     ${tw`py-16! flex flex-col items-center sm:py-6!`}
-
-    > div {
-        &:nth-child(odd) > article {
-            > img {
-                ${tw`order-1`}
-            }
-
-            > div {
-                ${tw`sm:order-1`}
-            }
-        }
-    }
 `
 
 const Card = styled.article`
@@ -25,6 +13,16 @@ const Card = styled.article`
     > div,
     > img {
         ${tw`w-2/4 sm:w-full`}
+    }
+
+    &:nth-child(odd) {
+        > img {
+            ${tw`order-1`}
+        }
+
+        > div {
+            ${tw`sm:order-1`}
+        }
     }
 `
 
@@ -37,7 +35,7 @@ const CardContent = styled.div`
 `
 
 const CardImage = styled.img`
-    ${tw`rounded-lg`}
+    ${tw`rounded-lg object-cover`}
 `
 
 const Badge = styled.span`

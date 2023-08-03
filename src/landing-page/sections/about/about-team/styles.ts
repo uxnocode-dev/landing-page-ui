@@ -87,12 +87,10 @@ const Background = styled.div`
     background: ${({ theme }) => rgba(theme.colors.placeholder, 0.4)};
 
     border-style: solid;
-    outline-style: solid;
-
     border-color: ${({ theme }) => rgba(theme.colors.white, 0.2)};
-    outline-color: ${({ theme }) => rgba(theme.colors.white, 0.2)};
 
-    box-shadow: 0px 0px 0px 80px ${({ theme }) => rgba(theme.colors.white, 0.1)};
+    box-shadow: 0px 0px 0px 40px ${({ theme }) => rgba(theme.colors.white, 0.2)},
+        0px 0px 0px 80px ${({ theme }) => rgba(theme.colors.white, 0.1)};
 `
 
 const Content = styled.article``

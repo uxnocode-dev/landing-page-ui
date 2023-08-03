@@ -1,6 +1,5 @@
-import { fadeIn } from '@/styles/animation'
-import styled, { css } from 'styled-components'
 import tw from 'twin.macro'
+import styled, { css } from 'styled-components'
 
 const heroMockBGAnimation = (size: string) => css`
     animation: hero-mock-bg-animation 6s ease-in-out infinite both;
@@ -37,8 +36,13 @@ const heroMockAnimation = css`
     }
 `
 
-const Container = styled.article.attrs(fadeIn.default)`
-    ${tw`relative h-[544px] sm:h-[480px]`}
+const Container = styled.article`
+    ${tw`relative h-[544px]  sm:h-[480px]`}
+
+    &.animate__animated.animate__fadeIn {
+        --animate-duration: 4s;
+        --animate-delay: 0.9s;
+    }
 `
 
 interface IShadowProps {
