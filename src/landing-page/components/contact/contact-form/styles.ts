@@ -5,23 +5,30 @@ const Container = styled.section`
     ${tw`grid grid-cols-2 items-stretch sm:flex sm:flex-col sm:items-center`}
 `
 
-const Image = styled.img``
+const Image = styled.img`
+    /* ${tw`sm:h-44 sm:w-full sm:object-cover`} */
+`
 
 const ImageLogo = styled.img`
-    ${tw`max-w-[280px] mb-8 sm:my-8 sm:max-w-[140px]`}
+    ${tw`max-w-[280px] mb-4 sm:my-8 sm:max-w-[140px]`}
 `
 
 const Form = styled.form`
-    ${tw`flex flex-col items-center w-full relative right-4 sm:right-0`}
+    ${tw`flex flex-col items-center w-full`}
 `
 
 const Title = styled.h2`
-    ${tw`text-center font-semibold text-[1.25rem]`}
+    ${tw`mb-8 w-4/5 text-center font-semibold text-[1.25rem] sm:w-full`}
 `
 
 const Text = styled.p`
     ${tw`text-center text-sm my-4 font-light w-10/12 sm:w-full`}
     color: ${({ theme }) => theme.colors.placeholder};
+`
+
+const ColoredText = styled.p`
+    ${tw`text-center text-sm mb-2`}
+    color: ${({ theme }) => theme.colors.secondary};
 `
 
 const FieldContainer = styled.div`
@@ -37,6 +44,7 @@ const Small = styled.small`
 
 export default {
     FieldContainer,
+    ColoredText,
     Container,
     ImageLogo,
     Image,

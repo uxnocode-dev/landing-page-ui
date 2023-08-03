@@ -1,7 +1,7 @@
 import Organic from './organic.png'
 import Tradefy from './tradefy.png'
+import Jusprod from './jusprod.png'
 import SmartTec from './smart-tec.png'
-import Documentacao from './documentacao.png'
 import BoraPlanejar from './bora-planejar.png'
 import AuthorOrganic from './author-organic.png'
 import AuthorDefault from './author-default.jpeg'
@@ -11,8 +11,8 @@ import AuthorBoraPlanejar from './author-bora-planejar.png'
 export default {
     Tradefy,
     Organic,
+    Jusprod,
     SmartTec,
-    Documentacao,
     BoraPlanejar,
     AuthorOrganic,
     AuthorDefault,

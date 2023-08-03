@@ -6,6 +6,7 @@ import images from '@/assets/images'
 import { BiLink } from 'react-icons/bi'
 import { FiUser } from 'react-icons/fi'
 import { useForm } from 'react-hook-form'
+import { IoMdClose } from 'react-icons/io'
 import { HiOutlineMail } from 'react-icons/hi'
 import landingPage from '@/assets/landing-page'
 import AppModal from '@/components/common/app-modal'
@@ -31,7 +32,8 @@ interface IModalSuccessProps extends AppModalInterface {}
 const LPModalCareer: React.FC<IModalSuccessProps> = props => {
     const { isOpen, onClose, onBackdropClick = () => {} } = props
     const { isMobile } = useWindowSize()
-    const avatarIMG = !isMobile
+
+    const imageURL = !isMobile
         ? landingPage.AvatarCareer
         : landingPage.AvatarCareerMobile
 
@@ -57,7 +59,7 @@ const LPModalCareer: React.FC<IModalSuccessProps> = props => {
             const { data } = await emailService.send(emailDTO)
             alertService.success(data.message)
             analytics.emitSend(model.role)
-            closeModal()
+            handleClose()
             reset()
         } catch (error) {
             alertService.error('Ocorreu um erro ao enviar o contato')
@@ -66,20 +68,29 @@ const LPModalCareer: React.FC<IModalSuccessProps> = props => {
         }
     })
 
-    const closeModal = () => onBackdropClick()
+    const handleClose = () => {
+        if (onClose) onClose()
+    }
 
     return (
         <AppModal
             width="80vw"
-            maxHeight="92vh"
+            maxHeight="98vh"
             maxWidth="1200px"
             isOpen={isOpen}
-            onClickClose={onClose}
+            isFull={isMobile}
+            showMobileHeader={isMobile}
+            containerStyle={{ padding: 10 }}
             onBackdropClick={onBackdropClick}
-            backdropStyle={{ paddingTop: '1rem' }}
+            onMobileHeaderClick={handleClose}
+            backdropStyle={{ paddingTop: '4px' }}
         >
             <Styles.Container>
-                <Styles.AvatarImage src={avatarIMG} />
+                <Styles.ButtonClose onClick={handleClose}>
+                    <IoMdClose />
+                </Styles.ButtonClose>
+
+                <Styles.AvatarImage src={imageURL} />
 
                 <Styles.Form onSubmit={onSubmit}>
                     <Styles.Logoimage src={images.Logo} />
@@ -127,7 +138,7 @@ const LPModalCareer: React.FC<IModalSuccessProps> = props => {
                         typePrev="button"
                         typeNext="submit"
                         onNext={() => {}}
-                        onPrev={closeModal}
+                        onPrev={handleClose}
                         disabledNext={!isValid}
                         className="self-end mt-auto sm:mt-4 sm:self-center"
                     />

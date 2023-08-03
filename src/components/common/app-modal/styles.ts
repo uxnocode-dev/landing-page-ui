@@ -1,19 +1,45 @@
 import { scrollBar } from '@/styles/ts/mixins/scroll-bar.mixin'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import tw from 'twin.macro'
 
 const animationIn = {
     className: 'animate__animated animate__fadeInDown'
 }
 
+const fullMode = css`
+    ${tw`p-0!`}
+    background: ${({ theme }) => theme.colors.bgSecondary};
+
+    :has(header) {
+        > article {
+            padding-top: ${({ theme }) =>
+                `calc(${theme.spacing.landing_page_header_height} + 1rem)`} !important;
+        }
+    }
+
+    > article {
+        ${tw`pt-0! w-full! h-full! min-h-full! max-h-full! max-w-full! rounded-none`}
+
+        > div {
+            ${tw`pt-0!`}
+        }
+    }
+`
+
 interface CommonProps {
     color?: string
 }
 
-const Backdrop = styled.section`
+interface IBackdropProps {
+    isFull?: boolean
+}
+
+const Backdrop = styled.section<IBackdropProps>`
     ${tw`fixed w-full h-full top-0 left-0 flex flex-col justify-start items-center z-30`}
     background: #000000a1;
     padding-top: 16vh;
+
+    ${({ isFull }) => (isFull ? fullMode : null)}
 `
 
 const ModalContainer = styled.article.attrs(animationIn)`
@@ -27,7 +53,7 @@ const ModalContainer = styled.article.attrs(animationIn)`
 const ModalHeader = styled.div``
 
 const ModalBody = styled.div<CommonProps>`
-    ${tw`pr-4 flex-auto overflow-y-auto overflow-x-hidden`}
+    ${tw`flex-auto overflow-y-auto overflow-x-hidden`}
     ${scrollBar('6px')}
 
     ::-webkit-scrollbar-thumb {
@@ -50,11 +76,34 @@ const Button = styled.button.attrs(animationIn)<CommonProps>`
         ${tw`text-lg ml-2`}
     }
 `
+
+const MobileHeader = styled.header`
+    ${tw`px-8 w-full  items-center justify-between fixed left-0 top-0 hidden sm:flex`}
+
+    background: ${({ theme }) => theme.colors.bgSecondary};
+    height: ${({ theme }) => theme.spacing.landing_page_header_height};
+
+    &::before {
+        content: '';
+    }
+`
+
+const MobileHeaderImage = styled.img`
+    ${tw`h-8`}
+`
+
+const MobileHeaderButton = styled.button`
+    color: ${({ theme }) => theme.colors.placeholder};
+`
+
 export default {
-    Backdrop,
+    MobileHeaderButton,
+    MobileHeaderImage,
     ModalContainer,
+    MobileHeader,
+    ModalFooter,
     ModalHeader,
     ModalBody,
-    ModalFooter,
+    Backdrop,
     Button
 }

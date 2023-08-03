@@ -1,74 +1,31 @@
+import React from 'react'
 import Styles from './styles'
-import { setLoading } from '@/hooks'
-import React, { useState } from 'react'
-import { IEmailSendDTO } from '@/interfaces/email.interface'
-import { EMAIL_LIST } from '@/config/email/email-list.config'
-import { AlertService } from '@/services/common/alert.service'
-import { EmailService } from '@/services/common/email.service'
-import { IContactUserData } from '@/interfaces/contact.interface'
-import { getBudgetTemplate } from '@/templates/send-budget.template'
-import LPBudgetFlow from '@/landing-page/components/contact/budget-flow'
+import landingPage from '@/assets/landing-page'
+import AppButton from '@/components/common/@button/app-button'
 import { LANDING_PAGE_NAVIGATION } from '@/contants/landing-page.contant'
-import LPContactForm from '@/landing-page/components/contact/contact-form'
-import LPContactSuccess from '@/landing-page/components/contact/contact-success'
-import { IBudgetSectionAnswer } from '@/landing-page/components/budget/budget-section'
-import LPSectionTitle from '@/landing-page/components/section-title'
-import analytics from './analytics'
 
-const emailService = new EmailService()
-const alertService = new AlertService()
-
-const LPContact: React.FC = () => {
-    const [userData, setUserData] = useState<IContactUserData | null>(null)
-    const [isSuccess, setIsSuccess] = useState<boolean>(false)
-    const hasUserData = !!userData
-
-    const handleSubmitForm = (model: IContactUserData) => {
-        setUserData(model)
-        analytics.emitInit()
-    }
-
-    const handleSubmitFlow = async (model: IBudgetSectionAnswer[]) => {
-        if (!userData) return
-
-        setLoading(true, 'Enviando o seu contato...')
-
-        try {
-            const emailDTO: IEmailSendDTO = {
-                subject: 'Proposta comercial',
-                to: [EMAIL_LIST.receiver.budget],
-                html: getBudgetTemplate(userData, model)
-            }
-
-            const { data } = await emailService.send(emailDTO)
-            setIsSuccess(true)
-            analytics.emitFinish()
-            alertService.success(data.message)
-        } catch (error) {
-            alertService.error('Ocorreu um erro ao enviar o contato')
-        } finally {
-            setLoading(false)
-        }
-    }
-
-    const form = <LPContactForm onSubmit={handleSubmitForm} />
-    const flow = <LPBudgetFlow onSubmit={handleSubmitFlow} />
-    const success = <LPContactSuccess />
-
-    const getCurrentContent = () => {
-        if (!hasUserData) return <>{form}</>
-        if (hasUserData && !isSuccess) return <>{flow}</>
-        else return <>{success}</>
-    }
-
+interface IContactProps {
+    openModal: Function
+}
+const LPContact: React.FC<IContactProps> = props => {
+    const { openModal } = props
     return (
-        <Styles.Container id={LANDING_PAGE_NAVIGATION.contact}>
-            <LPSectionTitle
-                title="Contato"
-                className="relative bottom-[68px] sm:bottom-8"
-            />
-            <Styles.Content>{getCurrentContent()}</Styles.Content>
-        </Styles.Container>
+        <Styles.ContainerWrapper id={LANDING_PAGE_NAVIGATION.contact}>
+            <Styles.Container>
+                <Styles.Content>
+                    <Styles.Title>Contato</Styles.Title>
+                    <Styles.Text>
+                        Agora que você já conhece um pouco mais sobre nós, que
+                        tal marcar um papo sobre o seu projeto com um
+                        especialista?!
+                    </Styles.Text>
+                    <AppButton colorMode="white" onClick={() => openModal()}>
+                        Falar com especialista
+                    </AppButton>
+                </Styles.Content>
+                <Styles.Image src={landingPage.AvatarContact} />
+            </Styles.Container>
+        </Styles.ContainerWrapper>
     )
 }
 

@@ -6,13 +6,14 @@ import { IPaginatorConfig } from '@/interfaces/_paginator.interface'
 import AppCarouselPaginator from '@/components/common/app-paginator'
 import { filterPaginatorItems } from '@/functions/paginator-filter.function'
 
-interface ILPContentPaginatorProps {
+interface IContentPaginatorProps {
     children: React.ReactNode
     itemsPerPage: number
+    contentClassName?: string
 }
 
-const LPContentPaginator: React.FC<ILPContentPaginatorProps> = props => {
-    const { children, itemsPerPage = 3 } = props
+const ContentPaginator: React.FC<IContentPaginatorProps> = props => {
+    const { children, contentClassName, itemsPerPage = 3 } = props
 
     const { isMobile } = useWindowSize()
     const [items, setItems] = useState<JSX.Element[]>([])
@@ -55,9 +56,11 @@ const LPContentPaginator: React.FC<ILPContentPaginatorProps> = props => {
                 />
             )}
 
-            <Styles.Content ref={contentRef}>{itemsToShow}</Styles.Content>
+            <Styles.Content className={contentClassName} ref={contentRef}>
+                {itemsToShow}
+            </Styles.Content>
         </Styles.Container>
     )
 }
 
-export default LPContentPaginator
+export default ContentPaginator

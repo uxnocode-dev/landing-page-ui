@@ -9,11 +9,11 @@ import { LANDING_PAGE_NAVIGATION } from '@/contants/landing-page.contant'
 import { ILandingPageMenuItem } from '@/components/@interface/landing-page-menu.interface'
 
 interface ILPHeaderProps {
-    openModalCareer: Function
+    openModal: Function
 }
 
 const LPHeader: React.FC<ILPHeaderProps> = props => {
-    const { openModalCareer } = props
+    const { openModal } = props
     const isScrollPastPosition = useScrollPosition(50)
     const [showSideMenu, setShowSideMenu] = useState(false)
 
@@ -24,7 +24,7 @@ const LPHeader: React.FC<ILPHeaderProps> = props => {
         { title: 'Cases', id: LANDING_PAGE_NAVIGATION.cases },
         { title: 'FAQs', id: LANDING_PAGE_NAVIGATION.faq },
         { title: 'Contato', id: LANDING_PAGE_NAVIGATION.contact },
-        { title: 'Carreira', action: () => openModalCareer() },
+        { title: 'Carreira', action: () => openModal() },
         { isSoon: true, title: 'Entrar', action: () => {} }
     ]
 

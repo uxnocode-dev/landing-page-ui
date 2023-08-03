@@ -9,6 +9,11 @@ interface IButtonProps {
     colorMode: AppButtonColorMode
 }
 
+const whiteMode = css`
+    color: ${({ theme }) => theme.colors.primary};
+    background: ${({ theme }) => theme.colors.white};
+`
+
 const primaryMode = css``
 
 const secondaryMode = css``
@@ -22,6 +27,7 @@ const transparentMode = css`
 `
 
 const colorModeControl = {
+    white: whiteMode,
     primary: primaryMode,
     secondary: secondaryMode,
     tertiary: tertiaryMode,

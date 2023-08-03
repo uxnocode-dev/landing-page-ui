@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import tw from 'twin.macro'
 
 const Container = styled.section`
-    ${tw`w-10/12 sm:w-full`}
+    ${tw`w-10/12 mx-auto sm:w-full`}
 `
 
 const Content = styled(motion.div)``

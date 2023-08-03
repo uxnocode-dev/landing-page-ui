@@ -7,11 +7,11 @@ import { SOCIAL_MEDIA } from '@/contants/social-media.constant'
 import { LANDING_PAGE_NAVIGATION } from '@/contants/landing-page.contant'
 
 interface ILPFooterProps {
-    openModalCareer: Function
+    openModal: Function
 }
 
 const LPFooter: React.FC<ILPFooterProps> = props => {
-    const { openModalCareer } = props
+    const { openModal } = props
     const openURL = (url: string) => window.open(url, '_blank')
 
     const columns = [
@@ -50,7 +50,7 @@ const LPFooter: React.FC<ILPFooterProps> = props => {
                     action: () =>
                         scrollTo(LANDING_PAGE_NAVIGATION.differentials)
                 },
-                { title: `Carreira`, action: () => openModalCareer() },
+                { title: `Carreira`, action: () => openModal() },
                 {
                     title: `Contato`,
                     action: () => scrollTo(LANDING_PAGE_NAVIGATION.contact)

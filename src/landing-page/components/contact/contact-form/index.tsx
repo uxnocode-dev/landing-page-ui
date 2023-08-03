@@ -22,9 +22,9 @@ const LPContactForm: React.FC<ILPContactFormProps> = props => {
     const { onSubmit } = props
     const { isMobile } = useWindowSize()
 
-    const avatarIMG = !isMobile
-        ? landingPage.AvatarContact
-        : landingPage.AvatarContactMobile
+    const imageURL = !isMobile
+        ? landingPage.AvatarContactModal
+        : landingPage.AvatarContactModalMobile
 
     const phoneNumberMask = useMask('phoneNumber')
 
@@ -43,23 +43,20 @@ const LPContactForm: React.FC<ILPContactFormProps> = props => {
 
     return (
         <Styles.Container>
-            <Styles.Image src={avatarIMG} />
+            <Styles.Image src={imageURL} />
 
             <Styles.Form onSubmit={_onSubmit}>
                 <Styles.ImageLogo src={images.Logo} />
 
                 <Styles.Title>
-                    Somos apaixonados por novas ideias, projetos inovadores e
-                    com potencial de revolucionar o mercado e melhorar a vida
-                    dos clientes!
+                    Quero entender melhor você e o seu projeto. Vou pedir para
+                    você responder 5 perguntas bem rápidas e já vamos para o
+                    nosso papo.
                 </Styles.Title>
 
-                <Styles.Text>
-                    Deixe os seus dados abaixo que nós vamos entrar em contato
-                    com você para <Styles.Bold>entender</Styles.Bold> melhor
-                    como podemos ajudar a potencializar o
-                    <Styles.Bold> sucesso</Styles.Bold> do seu projeto!
-                </Styles.Text>
+                <Styles.ColoredText>
+                    Não se preocupe, vai levar menos de 2 minutos!
+                </Styles.ColoredText>
 
                 <Styles.FieldContainer>
                     <AppInput
@@ -94,7 +91,9 @@ const LPContactForm: React.FC<ILPContactFormProps> = props => {
                     </AppButton>
                 </Styles.FieldContainer>
 
-                <Styles.Small>Tempo de resposta: Até 1 hora.</Styles.Small>
+                <Styles.Small>
+                    Nós vamos responder esse contato no máximo em 1 hora.
+                </Styles.Small>
             </Styles.Form>
         </Styles.Container>
     )

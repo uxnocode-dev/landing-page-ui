@@ -5,13 +5,19 @@ import Styles from './styles'
 interface ITypingTextProps {
     text: string
     velocity?: number
-    highlights: string[]
+    highlights?: string[]
     className?: string
     highlightColor?: string
 }
 
 const TypingText: React.FC<ITypingTextProps> = props => {
-    const { text, highlights, className, highlightColor, velocity = 50 } = props
+    const {
+        text,
+        className,
+        velocity = 30,
+        highlightColor,
+        highlights = []
+    } = props
     const [displayText, setDisplayText] = useState<string>('')
 
     useEffect(() => {

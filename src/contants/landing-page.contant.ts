@@ -5,5 +5,6 @@ export const LANDING_PAGE_NAVIGATION = {
     cases: 'cases',
     faq: 'faq',
     contact: 'contact',
-    career: 'career'
+    career: 'career',
+    development: 'development'
 }

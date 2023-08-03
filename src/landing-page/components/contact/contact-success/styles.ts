@@ -16,7 +16,7 @@ const ImageSuccess = styled.img`
 `
 
 const Section = styled.section`
-    ${tw`flex flex-col items-center w-full relative right-4 sm:right-0`}
+    ${tw`flex flex-col items-center w-full `}
 `
 
 const Title = styled.h2`

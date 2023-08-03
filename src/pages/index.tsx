@@ -4,36 +4,50 @@ import LPHero from '@/landing-page/sections/hero'
 import LPTeam from '@/landing-page/sections/team'
 import AppHead from '@/components/common/app-head'
 import LPCases from '@/landing-page/sections/cases'
+import LPAbout from '@/landing-page/sections/about'
+import LPWorks from '@/landing-page/sections/works'
 import LPHeader from '@/landing-page/components/header'
 import LPFooter from '@/landing-page/components/footer'
 import LPContact from '@/landing-page/sections/contact'
-import LPServices from '@/landing-page/sections/services'
-import LPTechnologies from '@/landing-page/sections/technologies'
+import LPTestimony from '@/landing-page/sections/testimony'
+import LPDevelopment from '@/landing-page/sections/development'
 import LPModalCareer from '@/landing-page/components/modal-career'
 import LPDifferentials from '@/landing-page/sections/differentials'
+import LPModalContact from '@/landing-page/components/modal-contact'
 
 const Home: React.FC = () => {
     const [showModalCareer, setShowModalCareer] = useState(false)
     const handleOpenModalCareer = () => setShowModalCareer(true)
 
+    const [showModalContact, setShowModalContact] = useState(false)
+    const handleOpenModalContact = () => setShowModalContact(true)
+
     return (
         <>
             <AppHead title="uxnocode" />
-
-            <LPHeader openModalCareer={handleOpenModalCareer} />
-            <LPHero />
-            <LPServices />
-            <LPTechnologies />
+            <LPHeader openModal={handleOpenModalCareer} />
+            <LPHero openModal={handleOpenModalContact} />
             <LPDifferentials />
-            <LPCases />
+            {/* <LPServices /> */}
+            {/* <LPTechnologies /> */}
+            <LPCases openModal={handleOpenModalContact} />
+            <LPDevelopment openModal={handleOpenModalContact} />
+            <LPAbout openModal={handleOpenModalContact} />
+            <LPTestimony />
+            <LPWorks />
+            <LPContact openModal={handleOpenModalContact} />
             <LPFaq />
-            <LPContact />
             <LPTeam />
-            <LPFooter openModalCareer={handleOpenModalCareer} />
+            <LPFooter openModal={handleOpenModalCareer} />
 
             <LPModalCareer
                 isOpen={showModalCareer}
-                onBackdropClick={() => setShowModalCareer(false)}
+                onClose={() => setShowModalCareer(false)}
+            />
+
+            <LPModalContact
+                isOpen={showModalContact}
+                onClose={() => setShowModalContact(false)}
             />
         </>
     )

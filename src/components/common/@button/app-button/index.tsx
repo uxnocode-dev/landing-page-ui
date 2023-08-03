@@ -3,6 +3,7 @@ import Styles from './styles'
 import { FaArrowRight } from 'react-icons/fa'
 
 export type AppButtonColorMode =
+    | 'white'
     | 'primary'
     | 'secondary'
     | 'tertiary'

@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import tw from 'twin.macro'
 
 const Container = styled.section`
-    ${tw`grid grid-cols-2 items-stretch sm:flex sm:flex-col sm:items-center sm:justify-center`}
+    ${tw`sm:w-full grid grid-cols-2 items-stretch relative sm:flex sm:flex-col sm:items-center sm:justify-center`}
 `
 
 const AvatarImage = styled.img`
@@ -25,7 +25,12 @@ const Text = styled.p`
     ${tw`text-center text-sm my-4`}
 `
 
+const ButtonClose = styled.button`
+    ${tw`absolute right-2 top-2 text-lg sm:hidden`}
+`
+
 export default {
+    ButtonClose,
     AvatarImage,
     Container,
     Logoimage,
