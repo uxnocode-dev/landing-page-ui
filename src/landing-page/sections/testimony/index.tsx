@@ -1,6 +1,7 @@
 import React from 'react'
 import Styles from './styles'
 import { CASES_DATA } from '@/landing-page/data/cases.data'
+import { FaArrowLeft, FaArrowRight, FaStar } from 'react-icons/fa'
 import LPSectionTitle from '@/landing-page/components/section-title'
 import ContentPaginator from '@/components/common/content-paginator'
 import { LANDING_PAGE_NAVIGATION } from '@/contants/landing-page.contant'
@@ -12,9 +13,22 @@ const LPTestimony: React.FC = () => {
         <Styles.Container id={LANDING_PAGE_NAVIGATION.testimony}>
             <LPSectionTitle title="Depoimentos" />
 
+            <Styles.ArrowGroup>
+                <FaArrowLeft />
+                <FaArrowRight />
+            </Styles.ArrowGroup>
+
             <ContentPaginator itemsPerPage={4} contentClassName="mt-8">
                 {data.map((item, index) => (
                     <Styles.Card key={index}>
+                        <Styles.StarGroup>
+                            <FaStar />
+                            <FaStar />
+                            <FaStar />
+                            <FaStar />
+                            <FaStar />
+                        </Styles.StarGroup>
+
                         <Styles.Text>{item.testimony}</Styles.Text>
 
                         <Styles.Footer>

@@ -7,6 +7,7 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import { createGlobalStyle } from 'styled-components'
 import tw from 'twin.macro'
 import 'animate.css'
+import { scrollBar } from './mixins/scroll-bar.mixin'
 
 export default createGlobalStyle`
    :root {
@@ -17,14 +18,18 @@ export default createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
   }
 
   body {
     ${tw`text-base`}
-    background: ${props => props.theme.colors.bgPrimary};
-    color: ${props => props.theme.colors.text};
+    background: ${({ theme }) => theme.colors.bgPrimary};
+    color: ${({ theme }) => theme.colors.text};
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
+
+    ${({ theme }) => scrollBar('8px', theme.colors.secondary)}
+
   }
 
   html {

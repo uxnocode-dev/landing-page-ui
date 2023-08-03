@@ -1,5 +1,5 @@
 import { FaLinkedinIn } from 'react-icons/fa'
-import { AiOutlineBehance, AiOutlineInstagram } from 'react-icons/ai'
+import { AiOutlineInstagram, AiOutlineYoutube } from 'react-icons/ai'
 
 export const SOCIAL_MEDIA = [
     {
@@ -13,8 +13,8 @@ export const SOCIAL_MEDIA = [
         icon: <AiOutlineInstagram />
     },
     {
-        title: `Behance`,
-        link: `https://www.behance.net/uxnocodeportfolio`,
-        icon: <AiOutlineBehance />
+        title: `Youtube`,
+        link: `https://www.youtube.com/channel/UCIfaNhrQIfafc_RvZWGrpaw`,
+        icon: <AiOutlineYoutube />
     }
 ]

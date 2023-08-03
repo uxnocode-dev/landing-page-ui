@@ -1,4 +1,5 @@
 import { scrollBar } from '@/styles/ts/mixins/scroll-bar.mixin'
+import { rgba } from 'polished'
 import styled, { css } from 'styled-components'
 import tw from 'twin.macro'
 
@@ -36,10 +37,10 @@ interface IBackdropProps {
 
 const Backdrop = styled.section<IBackdropProps>`
     ${tw`fixed w-full h-full top-0 left-0 flex flex-col justify-start items-center z-30`}
-    background: #000000a1;
+    background: ${({ theme }) => rgba(theme.colors.bgSecondary, 0.7)};
     padding-top: 16vh;
-
-    ${({ isFull }) => (isFull ? fullMode : null)}
+    backdrop-filter: blur(5px);
+    ${({ isFull }) => (isFull ? fullMode : null)};
 `
 
 const ModalContainer = styled.article.attrs(animationIn)`

@@ -28,9 +28,9 @@ export const CASES_DATA: ICaseItemLP[] = [
         authorImage: landingPage.cases.AuthorBoraPlanejar,
         authorName: `Marcos`,
         authorRole: `CEO Jusprod`,
-        description: `Sistema organizacional`,
-        testimony: `Recentemente, contratei a uxnocode para um serviço de ui/ux de algumas páginas da nossa plataforma. A equipe foi profissional, entregando um trabalho de alta qualidade dentro do prazo estipulado. A comunicação foi cordial e eficiente e eles entenderam perfeitamente minhas necessidades sempre abertos ao feedback. Em resumo, foi uma ótima experiência.`,
-        testimonyLabel: `A comunicação foi cordial e eficiente e eles entenderam perfeitamente as expectativas`
+        description: ``,
+        testimony: ``,
+        testimonyLabel: ``
     },
     {
         title: `Smarttec`,

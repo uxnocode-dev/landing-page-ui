@@ -8,10 +8,11 @@ import { LANDING_PAGE_NAVIGATION } from '@/contants/landing-page.contant'
 
 interface ILPFooterProps {
     openModal: Function
+    openModalContact: Function
 }
 
 const LPFooter: React.FC<ILPFooterProps> = props => {
-    const { openModal } = props
+    const { openModal, openModalContact } = props
     const openURL = (url: string) => window.open(url, '_blank')
 
     const columns = [
@@ -23,37 +24,47 @@ const LPFooter: React.FC<ILPFooterProps> = props => {
                     action: () => scrollTo(LANDING_PAGE_NAVIGATION.top)
                 },
                 {
-                    title: `Serviços`,
-                    action: () => scrollTo(LANDING_PAGE_NAVIGATION.services)
-                },
-                {
                     title: `Diferenciais`,
                     action: () =>
                         scrollTo(LANDING_PAGE_NAVIGATION.differentials)
                 },
                 {
-                    title: `Cases`,
+                    title: `Projetos`,
                     action: () => scrollTo(LANDING_PAGE_NAVIGATION.cases)
+                },
+                {
+                    title: `Desenvolvimento`,
+                    action: () => scrollTo(LANDING_PAGE_NAVIGATION.development)
+                },
+                {
+                    title: `Depoimentos`,
+                    action: () => scrollTo(LANDING_PAGE_NAVIGATION.testimony)
                 },
                 {
                     title: `FAQs`,
                     action: () => scrollTo(LANDING_PAGE_NAVIGATION.faq)
                 },
-                { title: `Carreira`, action: () => {} }
-            ]
+                {
+                    title: `Time`,
+                    action: () => scrollTo(LANDING_PAGE_NAVIGATION.team)
+                },
+                { title: `Carreira`, action: () => openModal() }
+            ].filter(({ title }) => {
+                const hideMobile = ['Diferenciais']
+                return hideMobile.some(item => item !== title)
+            })
         },
         {
             title: `Institucional`,
             items: [
                 {
                     title: `Sobre nós`,
-                    action: () =>
-                        scrollTo(LANDING_PAGE_NAVIGATION.differentials)
+                    action: () => scrollTo(LANDING_PAGE_NAVIGATION.about)
                 },
                 { title: `Carreira`, action: () => openModal() },
                 {
                     title: `Contato`,
-                    action: () => scrollTo(LANDING_PAGE_NAVIGATION.contact)
+                    action: () => openModalContact()
                 }
             ]
         },

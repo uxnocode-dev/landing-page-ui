@@ -2,15 +2,15 @@ import styled from 'styled-components'
 import tw from 'twin.macro'
 
 const Container = styled.section`
-    ${tw`sm:w-full grid grid-cols-2 items-stretch relative sm:flex sm:flex-col sm:items-center sm:justify-center`}
+    ${tw`sm:w-full grid grid-cols-2 gap-8 items-stretch relative sm:flex sm:flex-col sm:items-center sm:justify-center`}
 `
 
 const AvatarImage = styled.img`
-    ${tw`max-h-[500px] object-contain`}
+    ${tw`max-h-[500px] w-full rounded-lg object-cover`}
 `
 
 const Form = styled.form`
-    ${tw`flex flex-col items-center`}
+    ${tw`flex flex-col items-center pr-5 sm:pr-0`}
 
     > div {
         ${tw`w-full`}

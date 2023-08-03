@@ -7,7 +7,7 @@ const Container = styled(AppContainer)`
 `
 
 const Content = styled.article`
-    ${tw`mt-12 grid grid-cols-2 sm:grid-cols-1`}
+    ${tw`mt-12 grid grid-cols-[41% 1fr] sm:grid-cols-1`}
 `
 
 const View = styled.article`

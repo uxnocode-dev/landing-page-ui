@@ -2,10 +2,10 @@ import { fadeIn } from '@/styles/animation'
 import styled, { css } from 'styled-components'
 import tw from 'twin.macro'
 
-const heroMockAnimation = (size: string) => css`
-    animation: hero-mock-animation 6s ease-in-out infinite both;
+const heroMockBGAnimation = (size: string) => css`
+    animation: hero-mock-bg-animation 6s ease-in-out infinite both;
 
-    @keyframes hero-mock-animation {
+    @keyframes hero-mock-bg-animation {
         0% {
             box-shadow: 0px 0px 154px 80px
                 ${({ theme }) => theme.colors.placeholder};
@@ -21,6 +21,22 @@ const heroMockAnimation = (size: string) => css`
     }
 `
 
+const heroMockAnimation = css`
+    animation: hero-mock-animation 6s ease-in-out infinite both;
+
+    @keyframes hero-mock-animation {
+        0% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-0.5rem);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+`
+
 const Container = styled.article.attrs(fadeIn.default)`
     ${tw`relative h-[544px] sm:h-[480px]`}
 `
@@ -29,7 +45,7 @@ interface IShadowProps {
     isMobile: boolean
 }
 const Shadow = styled.div<IShadowProps>`
-    ${({ isMobile }) => heroMockAnimation(isMobile ? '120px' : '180px')}
+    ${({ isMobile }) => heroMockBGAnimation(isMobile ? '120px' : '180px')}
     ${tw`rounded-full absolute left-[40%] top-[40%] sm:top-2/4 z-[-1]`}
     background: ${({ theme }) => theme.colors.secondary};
 `
@@ -38,6 +54,7 @@ interface IImageProps {
     src: string
 }
 const Image = styled.figure<IImageProps>`
+    ${heroMockAnimation}
     ${tw`w-[400px] h-[100%] sm:absolute sm:w-[90vw]`}
 
     background: ${({ src }) => `url("${src}")`};

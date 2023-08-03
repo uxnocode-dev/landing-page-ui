@@ -1,9 +1,15 @@
 import React from 'react'
 import Styles from './styles'
-import landingPage from '@/assets/landing-page'
 import { BiWinkSmile } from 'react-icons/bi'
+import landingPage from '@/assets/landing-page'
+import { useWindowSize } from '@/hooks/window-size.hook'
 
 const HeroSocialProof: React.FC = () => {
+    const { isMobile } = useWindowSize()
+    const text = !isMobile
+        ? `Dispositivos móveis ativos no Brasil.\nIsso mesmo, nosso país tem mais celulares do que habitantes,\n e todos eles estão esperando o seu aplicativo chegar!`
+        : `Dispositivos móveis ativos no Brasil.\nIsso mesmo, nosso país tem mais\ncelulares do que habitantes,\n e todos eles estão esperando\no seu aplicativo chegar!`
+
     return (
         <Styles.Container>
             <Styles.ClientContainer>
@@ -12,9 +18,7 @@ const HeroSocialProof: React.FC = () => {
                     Clientes
                 </Styles.ClientBadge>
                 <Styles.ClientTitle>251,6 milhões</Styles.ClientTitle>
-                <Styles.ClientText>
-                    {`Dispositivos móveis ativos no Brasil.\nIsso mesmo, nosso país tem mais celulares do que habitantes,\n e todos eles estão esperando o seu aplicativo chegar!`}
-                </Styles.ClientText>
+                <Styles.ClientText>{text}</Styles.ClientText>
                 <Styles.ClientImage src={landingPage.HeroClient} />
             </Styles.ClientContainer>
 

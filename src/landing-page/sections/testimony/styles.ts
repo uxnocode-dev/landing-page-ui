@@ -11,6 +11,11 @@ const Card = styled.article`
     background: ${({ theme }) => theme.colors.bgSecondary};
 `
 
+const ArrowGroup = styled.div`
+    ${tw`hidden mt-4 sm:flex gap-2 items-center justify-center`}
+    color: ${({ theme }) => theme.colors.secondary};
+`
+
 const Text = styled.p`
     ${tw`text-sm mb-16`}
 `
@@ -41,6 +46,11 @@ const BoldText = styled.h5`
     color: ${({ theme }) => theme.colors.secondary};
 `
 
+const StarGroup = styled.section`
+    ${tw`mb-6 flex gap-1`}
+    color: ${({ theme }) => theme.colors.yellow};
+`
+
 export default {
     View,
     Card,
@@ -48,7 +58,9 @@ export default {
     Footer,
     BoldText,
     Container,
+    StarGroup,
     AuthorRole,
+    ArrowGroup,
     AuthorName,
     AuthorImage,
     AuthorContainer

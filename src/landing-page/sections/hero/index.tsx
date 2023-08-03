@@ -48,7 +48,7 @@ const LPHero: React.FC<IHeroProps> = ({ openModal }) => {
                         Quer entender como fazemos?
                     </Styles.Text>
 
-                    <AppButton onClick={() => openModal()}>
+                    <AppButton onClick={() => openModal()} loopEffect>
                         Sim, quero saber mais
                     </AppButton>
                 </Styles.Content>

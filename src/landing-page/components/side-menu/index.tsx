@@ -2,9 +2,11 @@ import React from 'react'
 import Styles from './styles'
 import images from '@/assets/images'
 import LPSocialMedia from '../social-media'
+import { FaArrowLeft } from 'react-icons/fa'
 import landingPage from '@/assets/landing-page'
 import AppSideMenu from '@/components/common/app-side-menu'
 import { ILandingPageMenuItem } from '@/components/@interface/landing-page-menu.interface'
+import AppButton from '@/components/common/@button/app-button'
 
 interface ISideMenuProps {
     show: boolean
@@ -17,16 +19,16 @@ const LPSideMenu: React.FC<ISideMenuProps> = props => {
     const { show, items, onClose, onSelect } = props
 
     return (
-        <AppSideMenu
-            show={show}
-            fullContent
-            showLogo={false}
-            onClose={onClose}
-            imageBg={landingPage.SideMenuBG}
-        >
+        <AppSideMenu show={show} fullContent showLogo={false}>
             <Styles.Container>
-                <Styles.Image src={images.LogoMascot} />
-                <Styles.Title>uxnocode</Styles.Title>
+                <Styles.Header>
+                    <Styles.HeaderImage src={images.Logo} />
+                    <Styles.HeaderButton onClick={() => onClose()}>
+                        <FaArrowLeft />
+                    </Styles.HeaderButton>
+                </Styles.Header>
+
+                <Styles.Title>Menu</Styles.Title>
 
                 <Styles.Group>
                     {items
@@ -36,10 +38,16 @@ const LPSideMenu: React.FC<ISideMenuProps> = props => {
                                 key={index}
                                 onClick={() => onSelect(item)}
                             >
+                                {item.icon}
                                 {item.title}
                             </Styles.Item>
                         ))}
                 </Styles.Group>
+
+                <AppButton isDisabled={true}>
+                    <Styles.Badge>Em breve</Styles.Badge>
+                    Entrar
+                </AppButton>
 
                 <LPSocialMedia />
             </Styles.Container>

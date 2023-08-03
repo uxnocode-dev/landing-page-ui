@@ -52,7 +52,7 @@ const LPAbout: React.FC<IAboutProps> = ({ openModal }) => {
                         </Styles.ColoredText>
                     </Styles.Text>
 
-                    <AppButton onClick={() => openModal()}>
+                    <AppButton loopEffect onClick={() => openModal()}>
                         Quero falar com vocês
                     </AppButton>
                 </Styles.View>

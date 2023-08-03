@@ -14,11 +14,15 @@ const Content = styled.section`
     ${tw`w-8/12 sm:w-full`}
 
     > article {
-        ${tw`rounded-none py-6 px-0 sm:border-none sm:mb-12`}
+        ${tw`rounded-none py-6 px-0 sm:border-none sm:mb-4`}
         border-bottom: 1px solid ${({ theme }) => theme.colors.text};
 
         &:last-of-type {
             border-bottom: none;
+        }
+
+        > section {
+            white-space: pre-line;
         }
     }
 `

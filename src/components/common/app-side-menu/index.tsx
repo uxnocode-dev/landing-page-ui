@@ -6,7 +6,7 @@ import { BsArrowLeftCircle } from 'react-icons/bs'
 interface IAppSideMenuProps {
     show: boolean
     imageBg?: string
-    onClose: Function
+    onClose?: Function
     showLogo?: boolean
     fullContent?: boolean
     children: React.ReactNode
@@ -66,9 +66,11 @@ const AppSideMenu: React.FC<IAppSideMenuProps> = props => {
             className="animate__animated"
         >
             <Styles.Header>
-                <Styles.Button onClick={handleClose}>
-                    <BsArrowLeftCircle />
-                </Styles.Button>
+                {!!onClose && (
+                    <Styles.Button onClick={handleClose}>
+                        <BsArrowLeftCircle />
+                    </Styles.Button>
+                )}
 
                 {showLogo && (
                     <Styles.Figure>

@@ -9,6 +9,7 @@ import LPWorks from '@/landing-page/sections/works'
 import LPHeader from '@/landing-page/components/header'
 import LPFooter from '@/landing-page/components/footer'
 import LPContact from '@/landing-page/sections/contact'
+import { useWindowSize } from '@/hooks/window-size.hook'
 import LPTestimony from '@/landing-page/sections/testimony'
 import LPDevelopment from '@/landing-page/sections/development'
 import LPModalCareer from '@/landing-page/components/modal-career'
@@ -16,6 +17,7 @@ import LPDifferentials from '@/landing-page/sections/differentials'
 import LPModalContact from '@/landing-page/components/modal-contact'
 
 const Home: React.FC = () => {
+    const { isMobile } = useWindowSize()
     const [showModalCareer, setShowModalCareer] = useState(false)
     const handleOpenModalCareer = () => setShowModalCareer(true)
 
@@ -27,9 +29,8 @@ const Home: React.FC = () => {
             <AppHead title="uxnocode" />
             <LPHeader openModal={handleOpenModalCareer} />
             <LPHero openModal={handleOpenModalContact} />
-            <LPDifferentials />
-            {/* <LPServices /> */}
-            {/* <LPTechnologies /> */}
+            {!isMobile && <LPDifferentials />}
+
             <LPCases openModal={handleOpenModalContact} />
             <LPDevelopment openModal={handleOpenModalContact} />
             <LPAbout openModal={handleOpenModalContact} />
@@ -38,7 +39,10 @@ const Home: React.FC = () => {
             <LPContact openModal={handleOpenModalContact} />
             <LPFaq />
             <LPTeam />
-            <LPFooter openModal={handleOpenModalCareer} />
+            <LPFooter
+                openModal={handleOpenModalCareer}
+                openModalContact={handleOpenModalContact}
+            />
 
             <LPModalCareer
                 isOpen={showModalCareer}

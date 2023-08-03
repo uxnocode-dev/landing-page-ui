@@ -28,7 +28,7 @@ const Title = styled.h5`
 `
 
 const TextBold = styled.h5`
-    ${tw`font-semibold mb-2 cursor-pointer`}
+    ${tw`font-semibold mb-3 cursor-pointer`}
 
     &:hover {
         color: ${({ theme }) => theme.colors.secondary};

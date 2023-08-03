@@ -22,6 +22,7 @@ const LPContact: React.FC<IContactProps> = props => {
                         especialista?!
                     </Styles.Text>
                     <AppButton
+                        loopEffect
                         onClick={() => openModal()}
                         colorMode={isMobile ? 'primary' : 'white'}
                     >

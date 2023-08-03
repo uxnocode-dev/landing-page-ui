@@ -18,11 +18,11 @@ import AppRadio from '@/components/common/@form/app-radio'
 import { ICareerForm } from '@/interfaces/career.interface'
 import { IEmailSendDTO } from '@/interfaces/email.interface'
 import { EMAIL_LIST } from '@/config/email/email-list.config'
+import AppButton from '@/components/common/@button/app-button'
 import { EmailService } from '@/services/common/email.service'
 import { AlertService } from '@/services/common/alert.service'
 import { getCareerTemplate } from '@/templates/send-career.template'
 import { AppModalInterface } from '@/interfaces/_app-modal.interface'
-import AppButtonNavigator from '@/components/common/@button/app-button-navigator'
 
 const emailService = new EmailService()
 const alertService = new AlertService()
@@ -74,7 +74,7 @@ const LPModalCareer: React.FC<IModalSuccessProps> = props => {
 
     return (
         <AppModal
-            width="80vw"
+            width="76vw"
             maxHeight="98vh"
             maxWidth="1200px"
             isOpen={isOpen}
@@ -83,7 +83,7 @@ const LPModalCareer: React.FC<IModalSuccessProps> = props => {
             containerStyle={{ padding: 10 }}
             onBackdropClick={onBackdropClick}
             onMobileHeaderClick={handleClose}
-            backdropStyle={{ paddingTop: '4px' }}
+            backdropStyle={{ paddingTop: '4px', justifyContent: 'center' }}
         >
             <Styles.Container>
                 <Styles.ButtonClose onClick={handleClose}>
@@ -134,14 +134,13 @@ const LPModalCareer: React.FC<IModalSuccessProps> = props => {
                         placeholder="Link do seu portfólio"
                     />
 
-                    <AppButtonNavigator
-                        typePrev="button"
-                        typeNext="submit"
-                        onNext={() => {}}
-                        onPrev={handleClose}
-                        disabledNext={!isValid}
-                        className="self-end mt-auto sm:mt-4 sm:self-center"
-                    />
+                    <AppButton
+                        type="submit"
+                        isDisabled={!isValid}
+                        className="self-end mt-auto sm:mt-4 flex sm:self-center"
+                    >
+                        Enviar
+                    </AppButton>
                 </Styles.Form>
             </Styles.Container>
         </AppModal>

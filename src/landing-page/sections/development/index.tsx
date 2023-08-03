@@ -1,14 +1,14 @@
 import Styles from './styles'
-import { BiCheckSquare } from 'react-icons/bi'
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react'
+import { IoMdCheckboxOutline } from 'react-icons/io'
 import { useWindowSize } from '@/hooks/window-size.hook'
 import { useAutoAnimate } from '@formkit/auto-animate/react'
 import AppButton from '@/components/common/@button/app-button'
+import ScrollAnimation from '@/components/common/scroll-animation'
 import LPSectionTitle from '@/landing-page/components/section-title'
 import { AiOutlineArrowDown, AiOutlineArrowUp } from 'react-icons/ai'
 import { DEVELOPMENT_DATA } from '@/landing-page/data/development.data'
 import { LANDING_PAGE_NAVIGATION } from '@/contants/landing-page.contant'
-import ScrollAnimation from '@/components/common/scroll-animation'
 
 interface IDevelopmentProps {
     openModal: Function
@@ -21,9 +21,9 @@ const LPDevelopment: React.FC<IDevelopmentProps> = ({ openModal }) => {
     const isShowItems = !isMobile ? true : showItems
     const actionLabel = isShowItems ? 'Ver menos' : 'Ver mais'
     const actionIcon = isShowItems ? (
-        <AiOutlineArrowDown />
-    ) : (
         <AiOutlineArrowUp />
+    ) : (
+        <AiOutlineArrowDown />
     )
 
     const toggleShowItems = () => setShowItems(!showItems)
@@ -48,7 +48,7 @@ const LPDevelopment: React.FC<IDevelopmentProps> = ({ openModal }) => {
                                 <Styles.ItemsGroup>
                                     {item.items.map((subItem, subIndex) => (
                                         <Styles.ItemContainer key={subIndex}>
-                                            <BiCheckSquare />
+                                            <IoMdCheckboxOutline />
                                             <Styles.ItemText>
                                                 {subItem}
                                             </Styles.ItemText>

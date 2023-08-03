@@ -83,7 +83,7 @@ const LPModalContact: React.FC<IModalContactProps> = props => {
             containerStyle={{ padding: 10 }}
             onBackdropClick={onBackdropClick}
             onMobileHeaderClick={handleClose}
-            backdropStyle={{ paddingTop: '4px' }}
+            backdropStyle={{ paddingTop: '4px', justifyContent: 'center' }}
         >
             <Styles.Container>
                 <Styles.ButtonClose onClick={handleClose}>

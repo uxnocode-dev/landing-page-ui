@@ -11,6 +11,10 @@ const LPTeam: React.FC = () => {
     const { isMobile } = useWindowSize()
     const slidesPerView = isMobile ? 2 : 4
 
+    const goToLinkedin = (url: string) => {
+        if (url) window.open(url, '_blank')
+    }
+
     return (
         <Styles.ContainerWrapper id={LANDING_PAGE_NAVIGATION.team}>
             <Styles.Container>
@@ -22,7 +26,10 @@ const LPTeam: React.FC = () => {
                 <Styles.Content>
                     <CarouselLoop stopOnHover slidesPerView={slidesPerView}>
                         {TEAM_DATA.map((item, index) => (
-                            <Styles.Card key={index}>
+                            <Styles.Card
+                                key={index}
+                                onClick={() => goToLinkedin(item.linkedinURL)}
+                            >
                                 <Styles.CardImageContainer>
                                     <Styles.Image src={item.image} />
 

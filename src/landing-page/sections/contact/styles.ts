@@ -8,7 +8,8 @@ const ContainerWrapper = styled.section`
 `
 
 const Container = styled(AppContainer)`
-    ${tw`flex items-stretch md:bg-transparent sm:flex-col sm:w-[96vw] sm:rounded-lg`}
+    ${tw`flex items-stretch z-[1] relative md:bg-transparent sm:flex-col sm:w-[96vw] sm:rounded-lg`}
+    box-shadow: 0px -34px 35px -27px rgba(0,0,0,0.75);
 
     @media (max-width: 640px) {
         background: ${({ theme }) => theme.colors.bgSecondary};

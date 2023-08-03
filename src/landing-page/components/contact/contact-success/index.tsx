@@ -9,7 +9,7 @@ const LPContactSuccess: React.FC = () => {
 
     const avatarIMG = !isMobile
         ? landingPage.AvatarContact
-        : landingPage.AvatarContactMobile
+        : landingPage.AvatarContact
 
     return (
         <Styles.Container>
@@ -24,7 +24,7 @@ const LPContactSuccess: React.FC = () => {
                 </Styles.Title>
 
                 <Styles.Text>
-                    Nosso atendimento costuma ser bem rápido e você receberá um
+                    Nosso atendimento costuma ser bem rápido, você receberá um
                     e-mail de resposta e também chamaremos no whatsapp para
                     começar o entendimento cada vez mais profundo da sua ideia!
                     Muito obrigado novamente por entrar em contato! Até já!

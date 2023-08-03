@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import tw from 'twin.macro'
 
 const Container = styled(AppContainer)`
-    ${tw`px-0! grid grid-cols-[40% 1fr] sm:grid-cols-1 sm:px-4!`}
+    ${tw`px-0! grid grid-cols-[44% 1fr] sm:grid-cols-1 sm:px-4!`}
 
     > article {
         ${tw`p-8`}
@@ -38,14 +38,15 @@ const ClientImage = styled.img`
 `
 
 const MarketContainer = styled.article`
-    ${tw`flex items-center gap-4 sm:rounded-2xl sm:flex-col`}
-    background: ${({ theme }) => theme.colors.primary};
+    ${tw`py-0! flex items-center gap-4 sm:rounded-2xl sm:flex-col sm:py-8!`}
+    background: ${({ theme }) => theme.colors.secondary};
+    box-shadow: inset 250px 340px 35px -30px ${({ theme }) => theme.colors.primary};
 `
 
 const MarketContent = styled.div``
 
 const MarketTitle = styled.h1`
-    ${tw`font-bold text-[2.75rem] sm:text-lg`}
+    ${tw`font-bold text-[3rem] sm:text-[2.7rem] sm:mt-2`}
 `
 
 const MarketBadge = styled.span`
@@ -54,11 +55,11 @@ const MarketBadge = styled.span`
 `
 
 const MarketText = styled.p`
-    ${tw`w-[74%]`}
+    ${tw`w-[74%] sm:w-full`}
 `
 
 const MarketImage = styled.img`
-    ${tw`w-4/12 object-contain sm:order-2 sm:w-full`}
+    ${tw`w-6/12 object-contain sm:order-2 sm:w-full m-0 sm:relative sm:top-4`}
 `
 
 export default {

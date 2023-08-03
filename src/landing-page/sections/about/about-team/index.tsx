@@ -12,9 +12,9 @@ const AboutTeam: React.FC<IAboutTeamProps> = props => {
 
     const items = [
         { title: `Pedro`, image: landingPage.team.PedroSilva },
-        { title: `Davi`, image: landingPage.team.DaviMendes },
+        { title: `Andrei`, image: landingPage.team.AndreiCasagrande },
         { title: `José Thiago`, image: landingPage.team.ThiagoAraujo },
-        { title: `Andrei`, image: landingPage.team.AndreiCasagrande }
+        { title: `Davi`, image: landingPage.team.DaviMendes }
     ]
 
     return (

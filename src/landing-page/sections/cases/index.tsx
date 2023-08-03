@@ -19,7 +19,7 @@ const LPCases: React.FC<ICasesProps> = ({ openModal }) => {
                 ))}
             </Styles.Content>
 
-            <AppButton onClick={() => openModal()} className="mt-16">
+            <AppButton loopEffect onClick={() => openModal()} className="mt-16">
                 Quero meu case aqui também
             </AppButton>
         </Styles.Container>
