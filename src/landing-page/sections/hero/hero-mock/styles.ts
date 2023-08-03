@@ -37,7 +37,7 @@ const heroMockAnimation = css`
 `
 
 const Container = styled.article`
-    ${tw`relative h-[544px]  sm:h-[480px]`}
+    ${tw`relative h-[544px] sm:h-[480px]`}
 
     &.animate__animated.animate__fadeIn {
         --animate-duration: 4s;
