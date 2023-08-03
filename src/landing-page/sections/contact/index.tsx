@@ -3,7 +3,6 @@ import Styles from './styles'
 import landingPage from '@/assets/landing-page'
 import { useWindowSize } from '@/hooks/window-size.hook'
 import AppButton from '@/components/common/@button/app-button'
-import { LANDING_PAGE_NAVIGATION } from '@/contants/landing-page.contant'
 
 interface IContactProps {
     openModal: Function
@@ -13,7 +12,7 @@ const LPContact: React.FC<IContactProps> = props => {
     const { isMobile } = useWindowSize()
 
     return (
-        <Styles.ContainerWrapper id={LANDING_PAGE_NAVIGATION.contact}>
+        <Styles.ContainerWrapper>
             <Styles.Container>
                 <Styles.Content>
                     <Styles.Title>Contato</Styles.Title>

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import tw from 'twin.macro'
 
 const ContainerWrapper = styled.section`
-    ${tw`mb-12`}
+    ${tw`mb-0 sm:mb-12`}
 `
 
 const Container = styled(AppContainer)`
