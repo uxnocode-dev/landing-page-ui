@@ -1,17 +1,12 @@
 import React from 'react'
 import Styles from './styles'
 import Icons from '@/assets/icons'
-import LPButton from '@/landing-page/components/button'
 import { useWindowSize } from '@/hooks/window-size.hook'
-import { scrollTo } from '@/functions/scroll-to.function'
 import LPSectionTitle from '@/landing-page/components/section-title'
-import { LANDING_PAGE_NAVIGATION } from '@/contants/landing-page.contant'
 import AppButton from '@/components/common/@button/app-button'
 
 const LPServices: React.FC = () => {
     const { isMobile } = useWindowSize()
-
-    const goToContact = () => scrollTo(LANDING_PAGE_NAVIGATION.contact)
 
     const items = [
         {
@@ -72,7 +67,7 @@ const LPServices: React.FC = () => {
     ]
 
     return (
-        <Styles.ContainerWrapper id={LANDING_PAGE_NAVIGATION.services}>
+        <Styles.ContainerWrapper>
             <Styles.Container>
                 <LPSectionTitle
                     shadowMode="secondary"
@@ -107,9 +102,7 @@ const LPServices: React.FC = () => {
                     ))}
                 </Styles.Content>
 
-                <AppButton onClick={goToContact} className="sm:mb-5">
-                    Eu quero
-                </AppButton>
+                <AppButton className="sm:mb-5">Eu quero</AppButton>
             </Styles.Container>
         </Styles.ContainerWrapper>
     )
