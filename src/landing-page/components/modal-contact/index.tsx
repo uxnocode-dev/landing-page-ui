@@ -16,9 +16,13 @@ import { IBudgetSectionAnswer } from '../budget/budget-section'
 import { IContactUserData } from '@/interfaces/contact.interface'
 import { getBudgetTemplate } from '@/templates/send-budget.template'
 import { AppModalInterface } from '@/interfaces/_app-modal.interface'
+import { WhatsAppService } from '@/services/common/whatsapp.service'
+import { WHATSAPP_CONTACT } from '@/contants/whatsapp.contant'
+import { getBudgetWhatsappTemplate } from '@/templates/send-budget-whatsapp.template'
 
 const emailService = new EmailService()
 const alertService = new AlertService()
+const whatsAppService = new WhatsAppService()
 
 interface IModalContactProps extends AppModalInterface {}
 
@@ -29,6 +33,11 @@ const LPModalContact: React.FC<IModalContactProps> = props => {
     const [userData, setUserData] = useState<IContactUserData | null>(null)
     const [isSuccess, setIsSuccess] = useState<boolean>(false)
     const hasUserData = !!userData
+
+    const sendMessage = () => {
+        const msg = `Olá, vim através do site e tenho interesse em marcar uma visita ao Colégio`
+        whatsAppService.sendMessage(WHATSAPP_CONTACT, msg)
+    }
 
     const handleSubmitForm = (model: IContactUserData) => {
         setUserData(model)
@@ -48,6 +57,9 @@ const LPModalContact: React.FC<IModalContactProps> = props => {
             }
 
             const { data } = await emailService.send(emailDTO)
+            const whatsappMessage = getBudgetWhatsappTemplate(userData, model)
+            whatsAppService.sendMessage(WHATSAPP_CONTACT, whatsappMessage)
+
             setIsSuccess(true)
             analytics.emitFinish()
             alertService.success(data.message)

@@ -1,0 +1,1 @@
+export const WHATSAPP_CONTACT = '5521970255578'
