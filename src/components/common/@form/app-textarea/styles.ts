@@ -9,6 +9,7 @@ interface ITextareaProps {
 }
 const Textarea = styled.textarea<ITextareaProps>`
     resize: ${({ resize }) => (resize ? 'vertical' : 'none')};
+    border-color: ${({ theme }) => theme.colors.bgSecondary};
 `
 
 const Label = styled.label`

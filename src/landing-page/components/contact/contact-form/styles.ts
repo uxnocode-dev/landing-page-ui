@@ -6,7 +6,7 @@ const Container = styled.section`
 `
 
 const Image = styled.img`
-    /* ${tw`sm:h-44 sm:w-full sm:object-cover`} */
+    ${tw`object-cover`}
 `
 
 const ImageLogo = styled.img`
@@ -21,10 +21,7 @@ const Title = styled.h2`
     ${tw`mb-8 w-4/5 text-center font-semibold text-[1.25rem] sm:w-full sm:text-base`}
 `
 
-const Text = styled.p`
-    ${tw`text-center text-sm my-4 font-light w-10/12 sm:w-full`}
-    color: ${({ theme }) => theme.colors.placeholder};
-`
+const Text = styled.p``
 
 const ColoredText = styled.p`
     ${tw`text-center text-sm mb-2`}

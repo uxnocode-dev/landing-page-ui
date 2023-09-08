@@ -1,10 +1,7 @@
 import { IContactUserData } from '@/interfaces/contact.interface'
 import { IBudgetSectionAnswer } from '@/landing-page/components/budget/budget-section'
 
-export const getBudgetTemplate = (
-    user: IContactUserData,
-    answers: IBudgetSectionAnswer[]
-) => {
+export const getBudgetTemplate = (user: IContactUserData) => {
     return `
 <!DOCTYPE html>
 <html lang="en">
@@ -47,30 +44,9 @@ export const getBudgetTemplate = (
             <p style="margin-bottom: 0rem">${user.name}</p>
             <p style="margin-bottom: 0rem">${user.telephone}</p>
             <p style="margin-top: 0rem">${user.email}</p>
+            <p style="margin-top: 0rem">${user.resume}</p>
+            <p style="margin-top: 0rem">R$${user.value}</p>
           </div>
-        </td>
-      </tr>
-
-      <tr>
-        <td align="center">
-          ${answers.map(
-              item => `
-          <article
-            style="
-              padding: 1rem;
-              max-width: 600px;
-              margin-bottom: 1rem;
-              border-radius: 22px;
-              background: #242a33;
-            "
-          >
-            <h4 style="margin-bottom: 0rem; margin-top: 0rem; font-weight: 600; color: #00bbff">
-              ${item.question}
-            </h4>
-            <p style="margin-bottom: 0rem; margin-top: 0rem">${item.answer}</p>
-          </article>
-          `
-          )}
         </td>
       </tr>
     </table>

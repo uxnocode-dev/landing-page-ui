@@ -13,6 +13,7 @@ import AppInput from '@/components/common/@form/app-input'
 import AppButton from '@/components/common/@button/app-button'
 import { contactUserDataSchema } from '@/schemas/contact.schema'
 import { IContactUserData } from '@/interfaces/contact.interface'
+import AppTextarea from '@/components/common/@form/app-textarea'
 
 interface ILPContactFormProps {
     onSubmit: (model: IContactUserData) => void
@@ -26,6 +27,7 @@ const LPContactForm: React.FC<ILPContactFormProps> = props => {
         ? landingPage.AvatarContactModal
         : landingPage.AvatarContactModalMobile
 
+    const moneyMask = useMask('money')
     const phoneNumberMask = useMask('phoneNumber')
 
     const {
@@ -48,17 +50,14 @@ const LPContactForm: React.FC<ILPContactFormProps> = props => {
             <Styles.Form onSubmit={_onSubmit}>
                 <Styles.ImageLogo src={images.Logo} />
 
-                <Styles.Title>
-                    Quero entender melhor você e o seu projeto. Vou pedir para
-                    você responder 5 perguntas bem rápidas e já vamos para o
-                    nosso papo.
-                </Styles.Title>
-
-                <Styles.ColoredText>
-                    Não se preocupe, vai levar menos de 2 minutos!
-                </Styles.ColoredText>
-
                 <Styles.FieldContainer>
+                    <Styles.Text className="text-center mb-8">
+                        Deixa eu entender um pouco melhor sobre o seu projeto e
+                        discutir como podemos dar vida a sua visão por meio de
+                        processos testados e aprovados de desenvolvimento?
+                    </Styles.Text>
+
+                    <Styles.Text>Seus dados*</Styles.Text>
                     <AppInput
                         id="name"
                         icon={<FiUser />}
@@ -81,6 +80,26 @@ const LPContactForm: React.FC<ILPContactFormProps> = props => {
                         error={errors.telephone}
                         placeholder="(00) 00000-0000"
                         {...phoneNumberMask.directive}
+                    />
+
+                    <Styles.Text>Entendendo seu negócio</Styles.Text>
+                    <AppTextarea
+                        id="resume"
+                        rows={4}
+                        register={register}
+                        error={errors.resume}
+                        placeholder="Por favor, me fale um pouco sobre o seu projeto e me ajude a entender como posso ajudar a colocar em prática"
+                    />
+
+                    <Styles.Text>
+                        Quanto você pensa investir no seu projeto?
+                    </Styles.Text>
+                    <AppInput
+                        id="value"
+                        type="number"
+                        register={register}
+                        error={errors.value}
+                        placeholder="R$0,00"
                     />
 
                     <AppButton

@@ -39,25 +39,19 @@ const LPModalContact: React.FC<IModalContactProps> = props => {
         whatsAppService.sendMessage(WHATSAPP_CONTACT, msg)
     }
 
-    const handleSubmitForm = (model: IContactUserData) => {
+    const handleSubmitForm = async (model: IContactUserData) => {
         setUserData(model)
-        analytics.emitInit()
-    }
-
-    const handleSubmitFlow = async (model: IBudgetSectionAnswer[]) => {
-        if (!userData) return
-
         setLoading(true, 'Enviando o seu contato...')
 
         try {
             const emailDTO: IEmailSendDTO = {
                 subject: 'Proposta comercial',
                 to: [EMAIL_LIST.receiver.budget],
-                html: getBudgetTemplate(userData, model)
+                html: getBudgetTemplate(model)
             }
 
             const { data } = await emailService.send(emailDTO)
-            const whatsappMessage = getBudgetWhatsappTemplate(userData, model)
+            const whatsappMessage = getBudgetWhatsappTemplate(model)
             whatsAppService.sendMessage(WHATSAPP_CONTACT, whatsappMessage)
 
             setIsSuccess(true)
@@ -71,12 +65,10 @@ const LPModalContact: React.FC<IModalContactProps> = props => {
     }
 
     const form = <LPContactForm onSubmit={handleSubmitForm} />
-    const flow = <LPBudgetFlow onSubmit={handleSubmitFlow} />
     const success = <LPContactSuccess />
 
     const getCurrentContent = () => {
         if (!hasUserData) return <>{form}</>
-        if (hasUserData && !isSuccess) return <>{flow}</>
         else return <>{success}</>
     }
 

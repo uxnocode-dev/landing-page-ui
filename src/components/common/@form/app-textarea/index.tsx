@@ -16,7 +16,15 @@ const AppTextarea: React.FC<AppTextareaProps> = forwardRef<
     HTMLTextAreaElement,
     AppTextareaProps
 >((props, ref) => {
-    const { id, error, label, resize, register, className, ...rest } = props
+    const {
+        id,
+        error,
+        label,
+        resize = false,
+        register,
+        className,
+        ...rest
+    } = props
 
     const registerValue = register ? register : () => {}
     const enabeleResize = resize === undefined ? true : resize
