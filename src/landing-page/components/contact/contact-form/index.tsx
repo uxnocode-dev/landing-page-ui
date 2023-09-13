@@ -14,6 +14,7 @@ import AppButton from '@/components/common/@button/app-button'
 import { contactUserDataSchema } from '@/schemas/contact.schema'
 import { IContactUserData } from '@/interfaces/contact.interface'
 import AppTextarea from '@/components/common/@form/app-textarea'
+import CurrencyInput, { formatValue } from 'react-currency-input-field'
 
 interface ILPContactFormProps {
     onSubmit: (model: IContactUserData) => void
@@ -32,6 +33,7 @@ const LPContactForm: React.FC<ILPContactFormProps> = props => {
 
     const {
         register,
+        setValue,
         handleSubmit,
         formState: { errors, isValid }
     } = useForm<IContactUserData>({
@@ -56,7 +58,6 @@ const LPContactForm: React.FC<ILPContactFormProps> = props => {
                         discutir como podemos dar vida a sua visão por meio de
                         processos testados e aprovados de desenvolvimento?
                     </Styles.Text>
-
                     <Styles.Text>Seus dados*</Styles.Text>
                     <AppInput
                         id="name"
@@ -81,7 +82,6 @@ const LPContactForm: React.FC<ILPContactFormProps> = props => {
                         placeholder="(00) 00000-0000"
                         {...phoneNumberMask.directive}
                     />
-
                     <Styles.Text>Entendendo seu negócio</Styles.Text>
                     <AppTextarea
                         id="resume"
@@ -90,16 +90,26 @@ const LPContactForm: React.FC<ILPContactFormProps> = props => {
                         error={errors.resume}
                         placeholder="Por favor, me fale um pouco sobre o seu projeto e me ajude a entender como posso ajudar a colocar em prática"
                     />
-
-                    <Styles.Text>
+                    <Styles.Text className="mb-2">
                         Quanto você pensa investir no seu projeto?
                     </Styles.Text>
-                    <AppInput
-                        id="value"
-                        register={register}
-                        error={errors.value}
-                        {...moneyMask.directive}
-                        placeholder="R$ 0,00"
+
+                    <CurrencyInput
+                        name="value"
+                        prefix="R$ "
+                        decimalsLimit={2}
+                        placeholder="R$ 0000"
+                        className="form-control mb-4"
+                        onValueChange={value => {
+                            const result = formatValue({
+                                prefix: 'R$ ',
+                                value: value || '',
+                                groupSeparator: '.',
+                                decimalSeparator: ','
+                            })
+
+                            setValue('value', String(result))
+                        }}
                     />
 
                     <AppButton
