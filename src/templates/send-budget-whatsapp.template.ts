@@ -11,7 +11,7 @@ export const getBudgetWhatsappTemplate = (user: IContactUserData) => {
 %0a
 %0a
 *Negócio:* ${user.resume}%0a
-*Valor:* R$${user.value}%0a
+*Valor:* ${user.value}%0a
 %0a
 `
 }

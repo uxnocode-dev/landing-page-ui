@@ -45,7 +45,7 @@ export const getBudgetTemplate = (user: IContactUserData) => {
             <p style="margin-bottom: 0rem">${user.telephone}</p>
             <p style="margin-top: 0rem">${user.email}</p>
             <p style="margin-top: 0rem">${user.resume}</p>
-            <p style="margin-top: 0rem">R$${user.value}</p>
+            <p style="margin-top: 0rem">${user.value}</p>
           </div>
         </td>
       </tr>

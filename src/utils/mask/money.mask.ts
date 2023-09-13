@@ -1,19 +1,36 @@
-const pattern = /^(\d{1,3})(\d{0,3})(\d{0,3})(\d{0,2})$/
+const pattern: RegExp = /^\d+(,\d{0,2})?$/
 
-const getRawValue = (value: string) => value.match(/\d+/g)?.join('')
+const getRawValue = (value: string): string => {
+    const cleanedValue: string = value.replace(/[^\d,]/g, '')
+    const parts: string[] = cleanedValue.split(',')
 
-const getFormatValue = (value: string) => {
-    value = value.replace(/\D/g, '')
-    value = value.replace(/(\d{1,3})(\d{0,3})$/, '$1,$2')
+    if (parts.length > 1) {
+        return `${parts[0]},${parts.slice(1).join('').slice(0, 2)}`
+    }
 
-    return value
+    return cleanedValue
 }
 
-const validation = (event: React.FormEvent<HTMLInputElement>) => {
-    let { value } = event.currentTarget
-    event.currentTarget.maxLength = 14
+const getFormatValue = (value: string): string => {
+    const cleanedValue: string = value.replace(/[^\d,]/g, '')
+    const parts: string[] = cleanedValue.split(',')
 
-    if (!value.match(pattern)) event.currentTarget.value = getFormatValue(value)
+    if (parts.length > 1) {
+        return `R$ ${parts[0]},${parts.slice(1).join('').slice(0, 2)}`
+    }
+
+    return `R$ ${cleanedValue}`
+}
+
+const validation = (
+    event: React.FormEvent<HTMLInputElement>
+): React.FormEvent<HTMLInputElement> => {
+    let { value } = event.currentTarget
+    event.currentTarget.maxLength = 20 // Defina o tamanho máximo conforme necessário
+
+    if (!value.match(pattern)) {
+        event.currentTarget.value = getFormatValue(value)
+    }
 
     return event
 }

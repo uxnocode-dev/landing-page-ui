@@ -96,10 +96,10 @@ const LPContactForm: React.FC<ILPContactFormProps> = props => {
                     </Styles.Text>
                     <AppInput
                         id="value"
-                        type="number"
                         register={register}
                         error={errors.value}
-                        placeholder="R$0,00"
+                        {...moneyMask.directive}
+                        placeholder="R$ 0,00"
                     />
 
                     <AppButton
