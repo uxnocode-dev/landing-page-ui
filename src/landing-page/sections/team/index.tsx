@@ -9,7 +9,7 @@ import { LANDING_PAGE_NAVIGATION } from '@/contants/landing-page.contant'
 
 const LPTeam: React.FC = () => {
     const { isMobile } = useWindowSize()
-    const slidesPerView = isMobile ? 2 : 4
+    const slidesPerView = isMobile ? 2 : 6
 
     const goToLinkedin = (url: string) => {
         if (url) window.open(url, '_blank')

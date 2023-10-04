@@ -29,12 +29,12 @@ const Home: React.FC = () => {
             <AppHead title="uxnocode" />
             <LPHeader openModal={handleOpenModalCareer} />
             <LPHero openModal={handleOpenModalContact} />
+            <LPAbout openModal={handleOpenModalContact} />
             {!isMobile && <LPDifferentials />}
 
             <LPCases openModal={handleOpenModalContact} />
-            <LPDevelopment openModal={handleOpenModalContact} />
-            <LPAbout openModal={handleOpenModalContact} />
             <LPTestimony />
+            <LPDevelopment openModal={handleOpenModalContact} />
             <LPWorks />
             <LPContact openModal={handleOpenModalContact} />
             <LPFaq />

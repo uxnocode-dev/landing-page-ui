@@ -16,6 +16,13 @@ export const TEAM_DATA = [
         abbreviation: `CFO`
     },
     {
+        name: `Andrei Casagrande`,
+        image: landingPage.team.AndreiCasagrande,
+        role: `Head de projetos`,
+        linkedinURL: `https://br.linkedin.com/in/andreiicasagrande`,
+        abbreviation: `COO`
+    },
+    {
         name: `Pedro Henrique Silva`,
         image: landingPage.team.PedroSilva,
         role: `Head de tecnologia`,
@@ -23,10 +30,38 @@ export const TEAM_DATA = [
         abbreviation: `CTO`
     },
     {
-        name: `Andrei Casagrande`,
-        image: landingPage.team.AndreiCasagrande,
-        role: `Head de pessoas`,
-        linkedinURL: `https://br.linkedin.com/in/andreiicasagrande`,
-        abbreviation: `CHRO`
+        name: `Leonardo Ribas`,
+        image: landingPage.team.LeonardoRibas,
+        role: `Psicólogo`,
+        linkedinURL: ``,
+        abbreviation: `Parceiro`
+    },
+    {
+        name: `Reinaldo Campos`,
+        image: landingPage.team.ReinaldoCampos,
+        role: `Dev Flutter Flow`,
+        linkedinURL: ``,
+        abbreviation: `Sênior`
+    },
+    {
+        name: `Luiza Pecci`,
+        image: landingPage.team.LuizaPecci,
+        role: `ux/ui designer`,
+        linkedinURL: ``,
+        abbreviation: `Sênior`
+    },
+    {
+        name: `Jeniffer Coutinho`,
+        image: landingPage.team.JenifferCoutinho,
+        role: `Dev Flutter Flow`,
+        linkedinURL: ``,
+        abbreviation: `Estagiária`
+    },
+    {
+        name: `Wasley Silva`,
+        image: landingPage.team.WasleySilva,
+        role: `ux/ui designer`,
+        linkedinURL: ``,
+        abbreviation: `Estagiário`
     }
 ]

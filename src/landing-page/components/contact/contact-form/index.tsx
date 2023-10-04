@@ -91,7 +91,7 @@ const LPContactForm: React.FC<ILPContactFormProps> = props => {
                         placeholder="Por favor, me fale um pouco sobre o seu projeto e me ajude a entender como posso ajudar a colocar em prática"
                     />
                     <Styles.Text className="mb-2">
-                        Quanto você pensa investir no seu projeto?
+                        Qual a sua expectativa de investimento?
                     </Styles.Text>
 
                     <CurrencyInput

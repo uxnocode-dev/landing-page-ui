@@ -13,7 +13,7 @@ import AppAccordion, {
 const LPFaq: React.FC = () => {
     const questions: IFaqQuestion[] = [
         {
-            title: `Como vou acompanhar o a construção do meu projeto?`,
+            title: `Como vou acompanhar a construção do meu projeto?`,
             text: `Nós temos um gerente dedicado em cada projeto. Você terá acesso a todas as fases de desenvolvimento pelo whatsapp, relatórios, reuniões e protótipos. Todas as plataformas tem acesso livre e a qualquer hora para você acompanhar em tempo real a criação do seu produto!`
         },
         {
