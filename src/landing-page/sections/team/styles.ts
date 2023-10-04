@@ -3,9 +3,7 @@ import { neon } from '@/styles/ts/mixins/neon.mixin'
 import styled from 'styled-components'
 import tw from 'twin.macro'
 
-const ContainerWrapper = styled.section`
-    background: ${({ theme }) => theme.colors.bgSecondary};
-`
+const ContainerWrapper = styled.section``
 
 const Container = styled(AppContainer)`
     ${tw`py-16! flex flex-col items-center`}

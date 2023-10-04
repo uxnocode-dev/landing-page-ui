@@ -1,6 +1,7 @@
 import team from './team'
 import cases from './cases'
 import development from './development'
+import flutterApps from './flutter-apps'
 import technologies from './technologies'
 
 import HeroBG from './hero-bg.png'
@@ -33,6 +34,7 @@ export default {
     SideMenuBG,
     development,
     HeroPattern,
+    flutterApps,
     AvatarCareer,
     technologies,
     WorksBGMobile,

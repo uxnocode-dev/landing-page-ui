@@ -12,6 +12,7 @@ import LPContact from '@/landing-page/sections/contact'
 import { useWindowSize } from '@/hooks/window-size.hook'
 import LPTestimony from '@/landing-page/sections/testimony'
 import LPDevelopment from '@/landing-page/sections/development'
+import LPFlutterApps from '@/landing-page/sections/flutter-apps'
 import LPModalCareer from '@/landing-page/components/modal-career'
 import LPDifferentials from '@/landing-page/sections/differentials'
 import LPModalContact from '@/landing-page/components/modal-contact'
@@ -34,6 +35,7 @@ const Home: React.FC = () => {
 
             <LPCases openModal={handleOpenModalContact} />
             <LPTestimony />
+            <LPFlutterApps />
             <LPDevelopment openModal={handleOpenModalContact} />
             <LPWorks />
             <LPContact openModal={handleOpenModalContact} />
