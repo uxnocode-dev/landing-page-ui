@@ -11,10 +11,7 @@ const LPFlutterApps: React.FC = () => {
 
     return (
         <Styles.Container>
-            <LPSectionTitle
-                shadowMode="secondary"
-                title="Apps desenvolvidos em Flutter"
-            />
+            <LPSectionTitle title="Apps desenvolvidos em Flutter" />
 
             <Styles.Content>
                 <CarouselLoop stopOnHover slidesPerView={slidesPerView}>
