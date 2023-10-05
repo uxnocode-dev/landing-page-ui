@@ -33,7 +33,7 @@ export const TEAM_DATA = [
         name: `Leonardo Ribas`,
         image: landingPage.team.LeonardoRibas,
         role: `Psicólogo`,
-        linkedinURL: ``,
+        linkedinURL: `https://www.linkedin.com/in/leonardo-silvano-thomasi-ribas-42a567287/`,
         abbreviation: `Parceiro`
     },
     {
