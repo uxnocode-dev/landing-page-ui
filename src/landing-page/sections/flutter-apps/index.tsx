@@ -13,6 +13,8 @@ const LPFlutterApps: React.FC = () => {
         <Styles.Container>
             <LPSectionTitle title="Apps desenvolvidos em Flutter" />
 
+            <Styles.Title>Você ainda tem alguma dúvida que o FlutterFlow entrega apps robustos? Veja algumas aplicações construídas com a ferramenta do google.</Styles.Title>
+
             <Styles.Content>
                 <CarouselLoop stopOnHover slidesPerView={slidesPerView}>
                     {FLUTTER_APPS.map((item, index) => (
