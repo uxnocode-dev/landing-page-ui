@@ -67,12 +67,23 @@ const cardControl = css`
             ${cardAnimation(3)}
         }
     }
-    &:nth-child(4) {
+    /* &:nth-child(4) {
         ${tw`bottom-10 right-[calc(50% + 4rem)]`}
 
         > img {
             ${tw`w-16 h-16`}
             ${cardAnimation(4)}
+        }
+    } */
+
+    &:nth-child(4) {
+        ${tw`bottom-14 p-3 w-16 h-16 right-[calc(50% + 3rem)] rounded-full`}
+        background: ${({ theme }) => theme.colors.primary};
+        border: 3px solid ${({ theme }) => theme.colors.placeholder};
+        ${cardAnimation(4)}
+
+        > img {
+            ${tw`w-14 h-14 object-contain border-0`}
         }
     }
 `

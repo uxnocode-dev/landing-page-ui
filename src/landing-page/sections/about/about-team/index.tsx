@@ -11,19 +11,20 @@ const AboutTeam: React.FC<IAboutTeamProps> = props => {
     const { className } = props
 
     const items = [
-        { title: `Pedro`, image: landingPage.team.PedroSilva },
-        { title: `Andrei`, image: landingPage.team.AndreiCasagrande },
         { title: `José Thiago`, image: landingPage.team.ThiagoAraujo },
-        { title: `Davi`, image: landingPage.team.DaviMendes }
+        { title: `Andrei`, image: landingPage.team.AndreiCasagrande },
+        { title: `Davi`, image: landingPage.team.DaviMendes },
+        // { title: `Pedro`, image: landingPage.team.PedroSilva },
+        { title: ``, image: images.LogoMascot },
     ]
 
     return (
         <Styles.Container className={className}>
             <Styles.Background />
 
-            <Styles.LogoContainer>
+            {/* <Styles.LogoContainer>
                 <Styles.CenterImage src={images.LogoMascot} />
-            </Styles.LogoContainer>
+            </Styles.LogoContainer> */}
 
             <Styles.Content>
                 {items.map((item, index) => (

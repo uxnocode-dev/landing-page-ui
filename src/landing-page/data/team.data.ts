@@ -22,13 +22,13 @@ export const TEAM_DATA = [
         linkedinURL: `https://br.linkedin.com/in/andreiicasagrande`,
         abbreviation: `COO`
     },
-    {
-        name: `Pedro Henrique Silva`,
-        image: landingPage.team.PedroSilva,
-        role: `Head de tecnologia`,
-        linkedinURL: `https://www.linkedin.com/in/pedro-silva-65996a181/`,
-        abbreviation: `CTO`
-    },
+    // {
+    //     name: `Pedro Henrique Silva`,
+    //     image: landingPage.team.PedroSilva,
+    //     role: `Head de tecnologia`,
+    //     linkedinURL: `https://www.linkedin.com/in/pedro-silva-65996a181/`,
+    //     abbreviation: `CTO`
+    // },
     {
         name: `Leonardo Ribas`,
         image: landingPage.team.LeonardoRibas,
@@ -43,13 +43,13 @@ export const TEAM_DATA = [
         linkedinURL: ``,
         abbreviation: `Sênior`
     },
-    {
-        name: `Luiza Pecci`,
-        image: landingPage.team.LuizaPecci,
-        role: `ux/ui designer`,
-        linkedinURL: ``,
-        abbreviation: `Sênior`
-    },
+    // {
+    //     name: `Luiza Pecci`,
+    //     image: landingPage.team.LuizaPecci,
+    //     role: `ux/ui designer`,
+    //     linkedinURL: ``,
+    //     abbreviation: `Sênior`
+    // },
     {
         name: `Jeniffer Coutinho`,
         image: landingPage.team.JenifferCoutinho,

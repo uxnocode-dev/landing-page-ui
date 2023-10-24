@@ -19,7 +19,7 @@ const LPAbout: React.FC<IAboutProps> = ({ openModal }) => {
                 <Styles.View>
                     <Styles.Title>uxnocode</Styles.Title>
                     <Styles.Text>
-                        Nós somos uma agência fundada por 4 sócios que são
+                        Nós somos uma agência fundada por 3 sócios que são
                         apaixonados pelo que fazem e tem uma baita experiência
                         no desenvolvimento de softwares.
                     </Styles.Text>
