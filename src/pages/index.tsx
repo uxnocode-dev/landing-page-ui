@@ -16,6 +16,7 @@ import LPFlutterApps from '@/landing-page/sections/flutter-apps'
 import LPModalCareer from '@/landing-page/components/modal-career'
 import LPDifferentials from '@/landing-page/sections/differentials'
 import LPModalContact from '@/landing-page/components/modal-contact'
+import FloatWhatsappButton from '@/landing-page/components/float-whatsapp-button'
 
 const Home: React.FC = () => {
     const { isMobile } = useWindowSize()
@@ -32,7 +33,6 @@ const Home: React.FC = () => {
             <LPHero openModal={handleOpenModalContact} />
             <LPAbout openModal={handleOpenModalContact} />
             {!isMobile && <LPDifferentials />}
-
             <LPCases openModal={handleOpenModalContact} />
             <LPTestimony />
             <LPFlutterApps />
@@ -41,16 +41,16 @@ const Home: React.FC = () => {
             <LPContact openModal={handleOpenModalContact} />
             <LPFaq />
             <LPTeam />
+            <FloatWhatsappButton />
+
             <LPFooter
                 openModal={handleOpenModalCareer}
                 openModalContact={handleOpenModalContact}
             />
-
             <LPModalCareer
                 isOpen={showModalCareer}
                 onClose={() => setShowModalCareer(false)}
             />
-
             <LPModalContact
                 isOpen={showModalContact}
                 onClose={() => setShowModalContact(false)}

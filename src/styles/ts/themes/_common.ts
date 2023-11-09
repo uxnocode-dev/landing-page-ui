@@ -1,5 +1,3 @@
-import { rgba } from 'polished'
-
 const common = {
     colors: {
         red: '#E94560',
@@ -12,6 +10,7 @@ const common = {
         secondary: '#00BBFF',
         gray_light: '#D0D5DD',
         placeholder: '#ffffff80',
+        whatsapp_green: '#35D850',
         placeholder_icon: '#bdc3ce'
     },
     spacing: {
