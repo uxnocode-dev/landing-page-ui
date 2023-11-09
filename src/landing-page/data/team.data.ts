@@ -37,31 +37,45 @@ export const TEAM_DATA = [
         abbreviation: `Parceiro`
     },
     {
+        name: `Rodrigo Gonçalves`,
+        image: landingPage.team.RodrigoGoncalves,
+        role: `Gerente comercial`,
+        linkedinURL: ``,
+        abbreviation: ``
+    },
+    {
+        name: `Anna Paula`,
+        image: landingPage.team.AnnaPaula,
+        role: `Gerente comercial`,
+        linkedinURL: ``,
+        abbreviation: ``
+    },
+    {
         name: `Reinaldo Campos`,
         image: landingPage.team.ReinaldoCampos,
         role: `Dev Flutter Flow`,
         linkedinURL: ``,
-        abbreviation: `Sênior`
+        abbreviation: ``
     },
-    // {
-    //     name: `Luiza Pecci`,
-    //     image: landingPage.team.LuizaPecci,
-    //     role: `ux/ui designer`,
-    //     linkedinURL: ``,
-    //     abbreviation: `Sênior`
-    // },
+    {
+        name: `Luiza Pecci`,
+        image: landingPage.team.LuizaPecci,
+        role: `ux/ui designer`,
+        linkedinURL: ``,
+        abbreviation: ``
+    },
     {
         name: `Jeniffer Coutinho`,
         image: landingPage.team.JenifferCoutinho,
         role: `Dev Flutter Flow`,
         linkedinURL: ``,
-        abbreviation: `Estagiária`
+        abbreviation: ``
     },
     {
         name: `Wasley Silva`,
         image: landingPage.team.WasleySilva,
         role: `ux/ui designer`,
         linkedinURL: ``,
-        abbreviation: `Estagiário`
+        abbreviation: ``
     }
 ]

@@ -28,8 +28,8 @@ const LPHero: React.FC<IHeroProps> = ({ openModal }) => {
                     </Styles.Row>
 
                     <TypingText
-                        text="Vamos tirar a sua ideia do papel e criar um app de sucesso juntos?"
-                        className="min-h-[144px] leading-[3rem] text-[2.75rem] mb-2 font-bold sm:text-[1.2rem] sm:block sm:leading-normal sm:text-center sm:min-h-0 sm:mb-6"
+                        text="Descobertas, design, desenvolvimento e suporte. Conheça o nosso método exclusivo de criar sistemas e apps!"
+                        className="min-h-[144px] leading-[3rem] text-[2rem] mb-2 font-bold sm:text-[1.2rem] sm:block sm:leading-normal sm:text-center sm:min-h-0 sm:mb-6"
                     />
 
                     <Styles.Text>
